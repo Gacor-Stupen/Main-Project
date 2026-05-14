@@ -16,9 +16,31 @@ function RegisterPage() {
     async function onSubmitHandler(event){
         //prevent refresh page
         event.preventDefault();
-        //kirim data ke api
 
-        //kalau tidak ada yang error pindah ke page login
+        if (password !== confirmPassword) {
+            return alert("Password doesnt matchh");
+        }
+        try {
+            const response = await fetch(`http://localhost:5001/api/auth/signup`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, email, password })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Regsiter Success");
+                navigate('/login');
+            } else {
+                alert(data.message || "Register Failed");
+            }
+        } catch (error) {
+            console.error("Error fetching:", error);
+            alert("Failed to connect to hte backend serverr");
+        }
     }
 
     //return UI

@@ -8,12 +8,32 @@ function LoginPage() {
     const [email, onChangeEmail] = useInput('');
     const [password, onChangePassword] = useInput('');
     //siapin handler(ngerubah state) ketika disubmit
-    const onSubmitHandler = (event) => {
+    const onSubmitHandler = async (event) => {
         //panggil fungsi agar page tidak kerefresh
         event.preventDefault();
-        //kirim data ke api buat validasi
+        try {
+            //kirim data ke api buat validasi
+            const response = await fetch(`http://localhost:5001/api/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+                credentials: 'include'
+            });
+            
+            const data = await response.json();
 
-        //kalau aman masuk ke homepage
+            if (response.ok) {
+                alert("Login Success");
+            } else {
+                alert(data.message || "login failed");
+            }
+        }catch (error) {
+            console.error("Error fetching:", error);
+            alert("failed to connect to the server");
+        }
+        
     }
   
     return (
