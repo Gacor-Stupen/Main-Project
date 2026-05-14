@@ -80,9 +80,15 @@ function RegisterPage() {
                     
                         <button type="submit"
                             className="bg-[#7B85CE] text-white py-3 rounded-xl font-bold mt-4 hover:bg-indigo-600 transition shadow-lg">
-                            Submit
+                            REGISTER
                         </button>
                     </form>
+                    <p className="mt-6 text-gray-500 text-sm">
+                        Don't have account? 
+                        <Link to="/login" className="text-blue-500 cursor-pointer hover:underline">
+                            Login
+                        </Link>
+                    </p>
                 </div>
             </div>
         </main>

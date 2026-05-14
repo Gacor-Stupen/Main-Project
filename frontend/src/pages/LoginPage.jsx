@@ -32,6 +32,7 @@ function LoginPage() {
             const data = await response.json();
 
             if (response.ok) {
+                localStorage.setItem("user", JSON.stringify(data));
                 navigate('/');
             } else {
                 setErrorMsg(data.message || "Login failed");
