@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useInput from '../hooks/useInput'
 import { FiUser, FiLock } from 'react-icons/fi';
@@ -7,15 +8,21 @@ function LoginPage() {
     //siapin state
     const [email, onChangeEmail] = useInput('');
     const [password, onChangePassword] = useInput('');
+    const [errorMsg, setErrorMsg] = useState('');
     //siapin handler(ngerubah state) ketika disubmit
+
+    const navigate = useNavigate();
+
     const onSubmitHandler = async (event) => {
         //panggil fungsi agar page tidak kerefresh
         event.preventDefault();
+        setErrorMsg('');
+
         try {
             //kirim data ke api buat validasi
             const response = await fetch(`http://localhost:5001/api/auth/login`, {
                 method: 'POST',
-                headers: {
+                headers: {  
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ email, password }),
@@ -25,9 +32,10 @@ function LoginPage() {
             const data = await response.json();
 
             if (response.ok) {
-                alert("Login Success");
+                localStorage.setItem("user", JSON.stringify(data));
+                navigate('/');
             } else {
-                alert(data.message || "login failed");
+                setErrorMsg(data.message || "Login failed");
             }
         }catch (error) {
             console.error("Error fetching:", error);
@@ -37,7 +45,7 @@ function LoginPage() {
     }
   
     return (
-        <main className="min-h-screen bg-[#7A93AA] flex flex-col items-center p-8">
+        <main className="min-h-screen bg-[#7A93AA] flex flex-col items-center justify-center p-8">
             {/* Logo */}
             <header className="w-full max-w-5xl mb-8">
                 <span className="bg-white px-6 py-2 rounded-full font-bold shadow-sm">apanihcik</span>
@@ -64,7 +72,11 @@ function LoginPage() {
                                 className="w-full border p-3 pl-12 rounded-xl focus:ring-2 focus:ring-indigo-400 outline-none"
                             />
                         </div>
-
+                        {errorMsg && (
+                            <div lassName="bg-red-100 text-red-600 text-sm text-center p-3 rounded-xl font-semibold">
+                                {errorMsg}
+                            </div>
+                        )}
                         <button type="submit" 
                             className="bg-[#7B85CE] text-white py-3 rounded-xl font-bold mt-4 hover:bg-indigo-600 transition shadow-lg">
                             LOGIN

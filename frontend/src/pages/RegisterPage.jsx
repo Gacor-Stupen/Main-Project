@@ -45,7 +45,7 @@ function RegisterPage() {
 
     //return UI
     return (
-        <main className="min-h-screen bg-[#7A93AA] flex flex-col items-center p-8">
+        <main className="min-h-screen bg-[#7A93AA] flex flex-col items-center justify-center p-8">
              <div className="bg-white w-full max-w-xl rounded-[40px] shadow-2xl flex overflow-hidden min-h-[500px]">
                 <div className="flex-1 p-16 flex flex-col justify-center items-center">
                     <h1 className="text-3xl font-semibold mb-10">Register</h1>
@@ -80,9 +80,15 @@ function RegisterPage() {
                     
                         <button type="submit"
                             className="bg-[#7B85CE] text-white py-3 rounded-xl font-bold mt-4 hover:bg-indigo-600 transition shadow-lg">
-                            Submit
+                            REGISTER
                         </button>
                     </form>
+                    <p className="mt-6 text-gray-500 text-sm">
+                        Don't have account? 
+                        <Link to="/login" className="text-blue-500 cursor-pointer hover:underline">
+                            Login
+                        </Link>
+                    </p>
                 </div>
             </div>
         </main>
