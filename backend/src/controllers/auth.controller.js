@@ -29,7 +29,7 @@ export const signup = async (req, res) => {
 
       res.status(201).json({
         id: newUser.id,
-        username: newUser.username, // Pastikan sesuai nama kolom di DB (username)
+        username: newUser.username,
         email: newUser.email,
         profilePic: newUser.profile_pic,
       });
