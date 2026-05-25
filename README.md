@@ -43,4 +43,5 @@
 
   # cara simulasi backend
   * import collection dan environment ke postman
-  * pastikan server AI dan backend menyala dan jalan run collection pada postman
+  * pastikan server AI dan backend menyala
+  * jalankan run collection pada postman
