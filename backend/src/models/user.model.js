@@ -2,13 +2,13 @@ import { query } from "../lib/db.js"; // Import fungsi query dari file koneksi k
 
 const User = {
   // Fungsi untuk membuat user baru (Create)
-  create: async (email, username, password, profilePic = "") => {
+  create: async (email, username, password) => {
     const sql = `
-      INSERT INTO users (email, username, password, profile_pic)
-      VALUES ($1, $2, $3, $4)
+      INSERT INTO users (email, username, password)
+      VALUES ($1, $2, $3)
       RETURNING *;
     `;
-    const values = [email, username, password, profilePic];
+    const values = [email, username, password];
     const res = await query(sql, values);
     return res.rows[0]; // Mengembalikan data user yang baru dibuat
   },

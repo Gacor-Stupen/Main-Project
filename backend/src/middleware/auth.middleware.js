@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import User from "../models/user.model.js"; // Pastikan pakai .js jika menggunakan ES Modules
+import User from "../models/user.model.js";
 
 export const protectRoute = async (req, res, next) => {
   try {
@@ -14,18 +14,14 @@ export const protectRoute = async (req, res, next) => {
       return res.status(401).json({ message: "Token invalid" });
     }
 
-    // 1. Ganti cara pemanggilan. findById sekarang adalah fungsi di user.model.js kita.
     const user = await User.findById(decoded.userId);
 
     if (!user) {
       return res.status(401).json({ message: "User not found" });
     }
 
-    // 2. Karena SQL manual (SELECT *) mengambil semua kolom,
-    // kita hapus password secara manual sebelum dimasukkan ke req.user.
     delete user.password;
 
-    // 3. Masukkan ke request object
     req.user = user;
 
     next();
