@@ -7,6 +7,7 @@ const BASE_URL = "http://localhost:5001";
 export default function HomePage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("user");
@@ -36,79 +37,64 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F1F5F9] pb-12 flex flex-col font-sans">
-      {/* Header */}
-      <header className="bg-white/90 backdrop-blur-md border-b border-white/20 sticky top-0 z-10 shadow-sm">
-        <div className="max-w-2xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div>
-            <p className="text-xs text-slate-400 font-medium">Selamat datang,</p>
-            <h1 className="font-extrabold text-slate-800 text-lg leading-none mt-0.5">
-              {user?.name || "User"} 
-            </h1>
-          </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 text-sm text-slate-500 font-bold hover:text-red-500 transition-colors bg-white/80 border border-slate-100 px-4 py-2 rounded-xl shadow-sm"
+    <div className="min-h-screen flex flex-col">
+      {/* Navbar */}
+      <nav className="bg-white px-6 py-4 flex justify-between items-center">
+        <p className="font-bold">ResignAjaDulu</p>
+        <div>
+          <button 
+            className="bg-gray-200 px-4 py-2 rounded-full text-sm"
+            onClick={() => setShowDropdown(!showDropdown)}
           >
-            <FiLogOut size={15} /> Logout
+            profile
           </button>
+          {showDropdown && (
+            <div className="absolute right-6 top-14 bg-white border border-gray-200 rounded-xl shadown-md overflow-hidden">
+              <button
+                onClick={() => { navigate("/profile"); setShowDropdown(false) }}
+                className="block w-full px-5 py-3 text-sm text-left text-red-500 hover:bg-gray-50"
+              >
+                Lihat Profile
+              </button>
+              <button
+                onClick={() => {
+                  localStorage.removeItem("user")
+                  navigate("/")
+                  setShowDropdown(false)
+                 }}
+                className="block w-full px-5 py-3 text-sm text-left hover:bg-gray-50"
+              >
+                Logout
+              </button>
+            </div>
+          )}
         </div>
-      </header>
+      </nav>
 
-      <div className="max-w-2xl mx-auto w-full px-6 py-8 flex flex-col gap-6">
-
-        {/* Hero Banner dengan warna gradasi yang pop-out di atas background abu-abu */}
-        <div className="bg-gradient-to-br from-[#3B4891] via-[#4F5DB3] to-[#6A79CE] rounded-3xl p-7 text-white relative overflow-hidden shadow-2xl shadow-black/20 border border-white/10">
-          <div className="absolute -right-8 -top-8 w-40 h-40 bg-white/10 rounded-full blur-sm" />
-          <div className="absolute -right-4 -bottom-10 w-28 h-28 bg-white/10 rounded-full blur-sm" />
-          <p className="text-xs font-bold uppercase tracking-widest text-white/70 mb-1">ResignAjaDulu</p>
-          <h2 className="text-2xl font-extrabold mb-2 leading-snug">
-            Prediksi Potensi<br />Resign Karyawan
-          </h2>
-          <p className="text-sm text-white/80 mb-5 max-w-[85%] leading-relaxed">
-            Gunakan kekuatan AI untuk menganalisis apakah karyawanmu berisiko turnover.
-          </p>
-          <button
-            onClick={() => navigate('/analyze')}
-            className="bg-white text-[#4F5DB3] font-extrabold px-6 py-3 rounded-2xl text-sm hover:bg-slate-50 transition-all shadow-lg active:scale-95"
-          >
-             Mulai Analisis
-          </button>
-        </div>
-
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 gap-4">
-          <FeatureCard
-            icon={<FiSearch size={22} className="text-[#4F5DB3]" />}
-            bg="bg-[#EEF0FF]"
-            title="Analisis Resign"
-            description="Masukkan 14 parameter ringkas karyawan dan dapatkan prediksi AI secara instan."
-            onClick={() => navigate('/analyze')}
-            cta="Mulai"
-          />
-          <FeatureCard
-            icon={<FiClock size={22} className="text-amber-600" />}
-            bg="bg-amber-50"
-            title="Riwayat Analisis"
-            description="Lihat semua hasil manajemen prediksi yang pernah kamu simpan sebelumnya."
-            onClick={() => navigate('/history')}
-            cta="Lihat Riwayat"
-          />
-        </div>
-
-        {/* Info Section - Ditambahkan border tipis agar pop up */}
-        <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-xl shadow-black/5">
-          <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2 border-b border-slate-50 pb-2">💡 Cara Kerja Aplikasi</h3>
-          <div className="flex flex-col gap-4">
-            <Step num="1" text="Isi data yang diperlukan" />
-            <Step num="2" text="Sistem menghitung indeks stagnasi dan rasio loyalitas di background" />
-            <Step num="3" text="AI menganalisis pola retensi data untuk memprediksi risiko resign" />
-            <Step num="4" text="Dapatkan rekomendasi taktis serta simpan hasil analisis ke riwayat" />
+      {/* Hero */}
+      <section className="flex-1 bg-blue-500 flex items-center px-10 gap-6">
+        <div className="flex-1">
+          <h1 className="text-white text-4x1 font-bold mb-6">Prediksi Resign Karyawan</h1>
+          <div className="flex gap-3">
+            <button
+              onClick={() => navigate("/analyze")}
+              className="bg-blue-400 text-white px-5 py-2 rounded-full text-sm"
+            >
+              Mulai Analisis
+            </button>
+            <button 
+              onClick={() => navigate("/team")}
+              className="bg-blue-400 text-white px-5 py-2 rounded-full text-sm"
+            >
+              About Us
+            </button>
           </div>
         </div>
-
-      </div>
-    </main>
+        <div className="w-64 h-52 bg-blue-400 rounded-2xl flex items-center justify-center text-white text-sm">
+          buat gambar
+        </div>
+      </section>
+    </div>
   );
 }
 
