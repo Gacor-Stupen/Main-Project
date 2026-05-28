@@ -47,7 +47,7 @@ export default function AnalyzePage() {
       //payload buat backend dan ai
       const payload = {
         monthlyIncome: Number(form.monthlyIncome),
-        jobRole: Number(form.jobRole),
+        jobRole: form.jobRole,
         overTime: Number(form.overTime),
         distanceFromHome: Number(form.distanceFromHome),
         totalWorkingYears: Number(form.totalWorkingYears),

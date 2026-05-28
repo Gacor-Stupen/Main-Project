@@ -65,8 +65,9 @@ export default function ResultPage() {
   if (!result) return null;
 
   //Menyimpan tiap property result ke variable 
-  const score = Number(result.score);
+  const score = result.score;
   const riskLevel = result.riskLevel;
+  const isHighRisk = riskLevel === "HIGH";
   const workplaceAnalysis = result.workplaceAnalysis;
   const recommendation = result.recommendation;
   const bgGradient = workplaceAnalysis?.includes("tekanan kerja") ? "from-red-50 via-orange-50 to-[#F5F7FF]" : "from-green-50 via-emerald-50 to-[#F5F7FF]";
