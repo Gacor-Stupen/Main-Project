@@ -4,8 +4,7 @@ import Joi from "joi";
 export const SaveHistoryPayloadSchema = Joi.object({
   // 1. Validasi untuk Output AI
   score: Joi.number().min(0).max(100).required(),
-  isPotentialResign: Joi.boolean().required(),
-  suggestion: Joi.string().required(),
+  riskLevel: Joi.string().required(),
 
   // 2. Validasi untuk 16 Parameter Input User
   monthlyIncome: Joi.number().positive().required(),

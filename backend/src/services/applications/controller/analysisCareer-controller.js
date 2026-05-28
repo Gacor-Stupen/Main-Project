@@ -95,7 +95,7 @@ export const checkResignReadiness = async (req, res) => {
     const aiData = await aiResponse.json();
 
     return response(res, 200, "AI analysis processed successfully", {
-      attritionRisk: aiData.attritionRisk,
+      score: aiData.attritionRisk,
       riskLevel: aiData.attritionRisk >= 80 ? "HIGH" : aiData.attritionRisk >= 50 ? "MEDIUM" : "LOW",
       workplaceAnalysis: aiData.isHighRisk
         ? "Terdapat indikasi tekanan kerja dan kecenderungan attrition yang tinggi."

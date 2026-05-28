@@ -8,7 +8,7 @@ export const savePredictionHistory = async (req, res) => {
     // Tangkap semuanya dari req.body yang dikirim frontend
     const newHistory = await HistoryRepository.createHistory({
       userId,
-      ...req.body,
+      ...req.validated,
     });
 
     return response(res, 201, "History saved successfully with form parameters!", newHistory);

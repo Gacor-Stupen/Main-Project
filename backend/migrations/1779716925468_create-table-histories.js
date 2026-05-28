@@ -26,12 +26,8 @@ export const up = (pgm) => {
       type: "NUMERIC(5, 2)",
       notNull: true,
     },
-    is_potential_resign: {
-      type: "BOOLEAN",
-      notNull: true,
-    },
-    suggestion: {
-      type: "TEXT",
+    risk_level: {
+      type: "VARCHAR(15)",
       notNull: true,
     },
 

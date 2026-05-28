@@ -7,7 +7,7 @@ const HistoryRepository = {
     const id = `predict-${nanoid(16)}`;
     const text = `
       INSERT INTO histories (
-        id, user_id, score, is_potential_resign, suggestion,
+        id, user_id, score, risk_level,
         monthly_income, job_role, over_time, distance_from_home,
         total_working_years, num_companies_worked, years_at_company,
         years_in_current_role, years_since_last_promotion, job_satisfaction,
@@ -16,17 +16,16 @@ const HistoryRepository = {
       )
       VALUES (
         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 
-        $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21
+        $11, $12, $13, $14, $15, $16, $17, $18, $19, $20
       )
-      RETURNING id, score, is_potential_resign AS "isPotentialResign", created_at;
+      RETURNING id, score, risk_level, created_at;
     `;
 
     const values = [
       id,
       data.userId,
       data.score,
-      data.isPotentialResign,
-      data.suggestion,
+      data.riskLevel,
       data.monthlyIncome,
       data.jobRole,
       data.overTime,
@@ -56,7 +55,15 @@ const HistoryRepository = {
       ORDER BY created_at DESC;
     `;
     const { rows } = await query(text, [userId]);
-    return rows;
+
+    // membersihkan kolom data apa saja yang mau diberikan kepada user
+    const filteredRows = rows.map((row) => {
+      const { years_per_company, overall_satisfaction, ...cleanData } = row;
+
+      return cleanData;
+    });
+
+    return filteredRows;
   },
 };
 
