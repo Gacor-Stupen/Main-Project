@@ -7,6 +7,112 @@
   },
   "item": [
     {
+      "name": "Add User with Invalid Payload Copy",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "let badUserPayloads = pm.environment.get('badUserPayloads');",
+              "",
+              "if (!badUserPayloads || badUserPayloads.length === 0) {",
+              "    badUserPayloads = [",
+              "        {},",
+              "        { name: 'John' },",
+              "        { name: 'John', email: 'invalid-email' },",
+              "        { name: 'John', email: 'john@example.com' },",
+              "        { name: 'John', email: 'john@example.com', password: '123' }",
+              "    ]",
+              "}",
+              "",
+              "const currentBadUserPayload = badUserPayloads.shift();",
+              "pm.environment.set('currentBadUserPayload', JSON.stringify(currentBadUserPayload));",
+              "pm.environment.set('badUserPayloads', badUserPayloads);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('it should response 400 status code', () => {",
+              "    pm.expect(pm.response).to.have.status(400);",
+              "});",
+              "",
+              "pm.test('response Content-Type header should have application/json value', () => {",
+              "    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');",
+              "});",
+              "",
+              "pm.test('response body should be an object', () => {",
+              "    const responseJson = pm.response.json();",
+              "    pm.expect(responseJson).to.be.an('object');",
+              "});",
+              "",
+              "pm.test('response body should have correct property and value', () => {",
+              "    const responseJson = pm.response.json();",
+              "    pm.expect(responseJson.status).to.equal('failed');",
+              "    pm.expect(responseJson.message).to.be.a('string');",
+              "});",
+              "",
+              "const repeatRequestUntilDatasetEmpty = () => {",
+              "    let badUserPayloads = JSON.parse(pm.environment.get('badUserPayloads') || \"[]\");",
+              "    ",
+              "    if (badUserPayloads && badUserPayloads.length > 0) {",
+              "        ",
+              "",
+              "        badUserPayloads.shift(); ",
+              "        ",
+              "        pm.environment.set('badUserPayloads', JSON.stringify(badUserPayloads));",
+              "        ",
+              "        if (badUserPayloads.length > 0) {",
+              "            postman.setNextRequest('Add User with Invalid Payload');",
+              "        } else {",
+              "            console.log(\"Semua bad payload sudah selesai dites!\");",
+              "            postman.setNextRequest(null); ",
+              "        }",
+              "    }",
+              "};",
+              "",
+              "repeatRequestUntilDatasetEmpty();"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{{currentBadUserPayload}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:{{port}}/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
       "name": "Add User with Valid Payload Copy",
       "event": [
         {
@@ -246,7 +352,7 @@
       "response": []
     },
     {
-      "name": "AI",
+      "name": "Career Analysis",
       "event": [
         {
           "listen": "test",
@@ -272,7 +378,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"monthlyIncome\": 5500,\r\n  \"jobRole\": 2,\r\n  \"overTime\": 1,\r\n  \"distanceFromHome\": 18,\r\n  \"totalWorkingYears\": 7,\r\n  \"numCompaniesWorked\": 3,\r\n  \"yearsAtCompany\": 4,\r\n  \"yearsInCurrentRole\": 2,\r\n  \"yearsSinceLastPromotion\": 1,\r\n  \"jobSatisfaction\": 2,\r\n  \"workLifeBalance\": 1,\r\n  \"stagnationIndex\": 3.5,\r\n  \"burnoutFlag\": 1,\r\n  \"yearsPerCompany\": 2.3,\r\n  \"overallSatisfaction\": 1.3,\r\n  \"environmentSatisfaction\": 1\r\n}",
+          "raw": "{\r\n  \"monthlyIncome\": 6000,\r\n  \"jobRole\": 2,\r\n  \"overTime\": 1,\r\n  \"distanceFromHome\": 8,\r\n  \"totalWorkingYears\": 4,\r\n  \"numCompaniesWorked\": 2,\r\n  \"yearsAtCompany\": 2,\r\n  \"yearsInCurrentRole\": 1,\r\n  \"yearsSinceLastPromotion\": 1,\r\n  \"jobSatisfaction\": 3,\r\n  \"environmentSatisfaction\": 3\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -280,7 +386,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:{{port}}/api/application/analyze",
+          "raw": "http://localhost:{{port}}/api/application/analysis/career",
           "protocol": "http",
           "host": [
             "localhost"
@@ -289,7 +395,334 @@
           "path": [
             "api",
             "application",
-            "analyze"
+            "analysis",
+            "career"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Save Career Analysis",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('it should response 200 status code', () => {\r",
+              "    pm.expect(pm.response).to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "pm.test('response body should have success status', () => {\r",
+              "    const responseJson = pm.response.json();\r",
+              "    pm.expect(responseJson.status).to.equal('success');\r",
+              "\r",
+              "    pm.environment.set('careerHistoryId', responseJson.data.id);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"monthlyIncome\": 6000,\r\n  \"jobRole\": 1,\r\n  \"overTime\": 1,\r\n  \"distanceFromHome\": 8,\r\n  \"totalWorkingYears\": 7,\r\n  \"numCompaniesWorked\": 3,\r\n  \"yearsAtCompany\": 4,\r\n  \"yearsInCurrentRole\": 2,\r\n  \"yearsSinceLastPromotion\": 1,\r\n  \"jobSatisfaction\": 2,\r\n  \"workLifeBalance\": 1,\r\n  \"stagnationIndex\": 3.5,\r\n  \"burnoutFlag\": 1,\r\n  \"yearsPerCompany\": 2.3,\r\n  \"overallSatisfaction\": 1.3,\r\n  \"environmentSatisfaction\": 1,\r\n   \"score\": 98.89,\r\n\"riskLevel\": \"HIGH\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:{{port}}/api/histories/career",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "histories",
+            "career"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Financial Analysis",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('it should response 200 status code', () => {\r",
+              "    pm.expect(pm.response).to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test('response body should have success status', () => {\r",
+              "    const responseJson = pm.response.json();\r",
+              "    pm.expect(responseJson.status).to.equal('success');\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"monthlySavings\": 1000000,\r\n  \"monthlyExpenses\": 3000000,\r\n  \"hasDependents\": \"No\",\r\n  \"workplaceStressScore\": 95, // Kantor sangat toxic, tapi finansial hancur\r\n  \"monthlyDebtObligations\": 2000000, // Beban PayLater gede\r\n  \"hasHealthInsurance\": false,\r\n  \"jobProspectStatus\": \"NO_LEADS\",\r\n  \"hasSideHustle\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:{{port}}/api/application/analysis/financial",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "application",
+            "analysis",
+            "financial"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Save Financial Analysis",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('it should response 200 status code', () => {\r",
+              "    pm.expect(pm.response).to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "pm.test('response body should have success status', () => {\r",
+              "    const responseJson = pm.response.json();\r",
+              "    pm.expect(responseJson.status).to.equal('success');\r",
+              "\r",
+              "    pm.environment.set('financialHistoryId', responseJson.data.id);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"historyId\":\"{{careerHistoryId}}\",\r\n\"finalReadinessScore\": 40,\r\n  \"monthlySavings\": 1000000,\r\n  \"monthlyExpenses\": 3000000,\r\n  \"hasDependents\": \"No\",\r\n  \"workplaceStressScore\": 95,\r\n  \"monthlyDebtObligations\": 2000000, // Beban PayLater gede\r\n  \"hasHealthInsurance\": false,\r\n  \"jobProspectStatus\": \"NO_LEADS\",\r\n  \"hasSideHustle\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:{{port}}/api/histories/financial",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "histories",
+            "financial"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get career history by id",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('it should response 200 status code', () => {\r",
+              "    pm.expect(pm.response).to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test('response body should have success status', () => {\r",
+              "    const responseJson = pm.response.json();\r",
+              "    pm.expect(responseJson.status).to.equal('success');\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:{{port}}/api/histories/career?id={{careerHistoryId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "histories",
+            "career"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "{{careerHistoryId}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get career history",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('it should response 200 status code', () => {\r",
+              "    pm.expect(pm.response).to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test('response body should have success status', () => {\r",
+              "    const responseJson = pm.response.json();\r",
+              "    pm.expect(responseJson.status).to.equal('success');\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:{{port}}/api/histories/career",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "histories",
+            "career"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get history financial",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('it should response 200 status code', () => {\r",
+              "    pm.expect(pm.response).to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test('response body should have success status', () => {\r",
+              "    const responseJson = pm.response.json();\r",
+              "    pm.expect(responseJson.status).to.equal('success');\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:{{port}}/api/histories/financial?id={{financialHistoryId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "histories",
+            "financial"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "{{financialHistoryId}}"
+            }
           ]
         }
       },
@@ -302,20 +735,7 @@
           "listen": "test",
           "script": {
             "exec": [
-              "pm.test('it should response 200 status code', () => {\r",
-              "    pm.expect(pm.response).to.have.status(200);\r",
-              "});\r",
-              "\r",
-              "pm.test('response body should confirm logout success', () => {\r",
-              "    const responseJson = pm.response.json();\r",
-              "    pm.expect(responseJson.status).to.equal('success');\r",
-              "});\r",
-              "\r",
-              "// Membersihkan token dari environment setelah berhasil logout\r",
-              "pm.test('clean up environment tokens', () => {\r",
-              "    pm.environment.unset('accessToken');\r",
-              "    // pm.environment.unset('userId'); // Buka komentar ini jika userId juga ingin dihapus saat logout\r",
-              "});"
+              ""
             ],
             "type": "text/javascript",
             "packages": {},
@@ -337,100 +757,6 @@
             "api",
             "auth",
             "logout"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Add User with Invalid Payload Copy",
-      "event": [
-        {
-          "listen": "prerequest",
-          "script": {
-            "exec": [
-              "let badUserPayloads = pm.environment.get('badUserPayloads');",
-              "",
-              "if (!badUserPayloads || badUserPayloads.length === 0) {",
-              "    badUserPayloads = [",
-              "        {},",
-              "        { name: 'John' },",
-              "        { name: 'John', email: 'invalid-email' },",
-              "        { name: 'John', email: 'john@example.com' },",
-              "        { name: 'John', email: 'john@example.com', password: '123' }",
-              "    ]",
-              "}",
-              "",
-              "const currentBadUserPayload = badUserPayloads.shift();",
-              "pm.environment.set('currentBadUserPayload', JSON.stringify(currentBadUserPayload));",
-              "pm.environment.set('badUserPayloads', badUserPayloads);"
-            ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
-          }
-        },
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test('it should response 400 status code', () => {",
-              "    pm.expect(pm.response).to.have.status(400);",
-              "});",
-              "",
-              "pm.test('response Content-Type header should have application/json value', () => {",
-              "    pm.expect(pm.response.headers.get('Content-Type')).to.includes('application/json');",
-              "});",
-              "",
-              "pm.test('response body should be an object', () => {",
-              "    const responseJson = pm.response.json();",
-              "    pm.expect(responseJson).to.be.an('object');",
-              "});",
-              "",
-              "pm.test('response body should have correct property and value', () => {",
-              "    const responseJson = pm.response.json();",
-              "    pm.expect(responseJson.status).to.equal('failed');",
-              "    pm.expect(responseJson.message).to.be.a('string');",
-              "});",
-              "",
-              "const repeatRequestUntilDatasetEmpty = () => {",
-              "    const badUserPayloads = pm.environment.get('badUserPayloads');",
-              "    if(badUserPayloads && badUserPayloads.length > 0) {",
-              "        postman.setNextRequest('Add User with Invalid Payload');",
-              "    }",
-              "};",
-              "",
-              "repeatRequestUntilDatasetEmpty();"
-            ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{{currentBadUserPayload}}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:{{port}}/api/auth/register",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "{{port}}",
-          "path": [
-            "api",
-            "auth",
-            "register"
           ]
         }
       },

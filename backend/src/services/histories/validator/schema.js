@@ -1,7 +1,7 @@
 // src/services/histories/validator/schema.js
 import Joi from "joi";
 
-export const SaveHistoryPayloadSchema = Joi.object({
+export const SaveHistoryCareerPayloadSchema = Joi.object({
   // 1. Validasi untuk Output AI
   score: Joi.number().min(0).max(100).required(),
   riskLevel: Joi.string().required(),
@@ -23,4 +23,23 @@ export const SaveHistoryPayloadSchema = Joi.object({
   yearsPerCompany: Joi.number().min(0).required(),
   overallSatisfaction: Joi.number().min(0).required(),
   environmentSatisfaction: Joi.number().integer().min(1).max(4).required(), // Skala 1-4
+});
+
+export const SaveHistoryFinancialPayloadSchema = Joi.object({
+  finalReadinessScore: Joi.number().min(0).max(100).required(),
+  monthlySavings: Joi.number().min(0).required(),
+  monthlyExpenses: Joi.number().min(0).required(),
+  monthlyDebtObligations: Joi.number().min(0).default(0),
+
+  hasDependents: Joi.string().valid("Yes", "No").required(),
+
+  hasHealthInsurance: Joi.boolean().default(false),
+
+  jobProspectStatus: Joi.string()
+    .valid("NO_LEADS", "APPLIED_ONLY", "INTERVIEW_STAGE", "SIGNED_OFFER")
+    .default("NO_LEADS"),
+
+  hasSideHustle: Joi.boolean().default(false),
+
+  workplaceStressScore: Joi.number().min(0).max(100).required(),
 });

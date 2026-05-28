@@ -2,11 +2,11 @@ import { query } from "../../../lib/db.js";
 import { nanoid } from "nanoid";
 import bcrypt from "bcrypt";
 
-const HistoryRepository = {
+const CareerHistoryRepository = {
   async createHistory(data) {
     const id = `predict-${nanoid(16)}`;
     const text = `
-      INSERT INTO histories (
+      INSERT INTO histories_career (
         id, user_id, score, risk_level,
         monthly_income, job_role, over_time, distance_from_home,
         total_working_years, num_companies_worked, years_at_company,
@@ -50,7 +50,7 @@ const HistoryRepository = {
 
   async findByUserId(userId) {
     const text = `
-      SELECT * FROM histories
+      SELECT * FROM histories_career
       WHERE user_id = $1
       ORDER BY created_at DESC;
     `;
@@ -65,6 +65,20 @@ const HistoryRepository = {
 
     return filteredRows;
   },
+
+  async findById(id) {
+    const text = `
+      SELECT * FROM histories_career
+      WHERE id = $1
+      ORDER BY created_at DESC;
+    `;
+    const { rows } = await query(text, [id]);
+
+    // membersihkan kolom data apa saja yang mau diberikan kepada user
+    const { years_per_company, overall_satisfaction, ...cleanData } = rows[0];
+
+    return cleanData;
+  },
 };
 
-export default HistoryRepository;
+export default CareerHistoryRepository;

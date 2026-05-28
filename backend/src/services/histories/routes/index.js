@@ -1,13 +1,16 @@
 import { Router } from "express";
-import { getUserHistories, savePredictionHistory } from "../controller/history-controller.js";
+import { getUserHistoriesCareer, saveCareerHistory } from "../controller/history-career-controller.js";
+import { getUserHistoriesFinancial, saveFinancialHistory } from "../controller/history-financial-controller.js";
 import { protectRoute } from "../../../middleware/auth.middleware.js";
-import { SaveHistoryPayloadSchema } from "../validator/schema.js";
+import { SaveHistoryCareerPayloadSchema, SaveHistoryFinancialPayloadSchema } from "../validator/schema.js";
 import { validate } from "../../../middleware/validate.js";
 
 const router = Router();
 
-router.get("/", protectRoute, getUserHistories);
+router.get("/career", protectRoute, getUserHistoriesCareer);
+router.post("/career", protectRoute, validate(SaveHistoryCareerPayloadSchema), saveCareerHistory);
 
-router.post("/", protectRoute, validate(SaveHistoryPayloadSchema), savePredictionHistory);
+router.get("/financial", protectRoute, getUserHistoriesFinancial);
+router.post("/financial", protectRoute, validate(SaveHistoryFinancialPayloadSchema), saveFinancialHistory);
 
 export default router;

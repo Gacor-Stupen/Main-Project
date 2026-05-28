@@ -23,28 +23,45 @@ export const AnalysisCareerPayloadSchema = Joi.object({
 export const AnalysisFinancialPayloadSchema = Joi.object({
   monthlySavings: Joi.number().min(0).required().messages({
     "number.base": "Tabungan bulanan harus berupa angka",
-    "number.min": "Tabungan bulanan tidak boleh minus",
+    "number.min": "Tabungan tidak boleh minus",
     "any.required": "Tabungan bulanan wajib diisi",
   }),
 
-  // Validasi pengeluaran bulanan: harus berupa angka positif dan lebih besar dari 0
-  monthlyExpenses: Joi.number().positive().required().messages({
+  monthlyExpenses: Joi.number().min(0).required().messages({
     "number.base": "Pengeluaran bulanan harus berupa angka",
-    "number.positive": "Pengeluaran bulanan harus lebih besar dari 0",
+    "number.min": "Pengeluaran tidak boleh minus",
     "any.required": "Pengeluaran bulanan wajib diisi",
   }),
 
-  // Validasi tanggungan: hanya menerima string 'Yes' atau 'No' sesuai kondisi UI kamu
+  monthlyDebtObligations: Joi.number().min(0).default(0).messages({
+    "number.base": "Cicilan/utang bulanan harus berupa angka",
+    "number.min": "Cicilan tidak boleh minus",
+  }),
+
   hasDependents: Joi.string().valid("Yes", "No").required().messages({
-    "any.only": 'Status tanggungan harus berupa "Yes" atau "No"',
+    "any.only": "Status tanggungan harus berupa 'Yes' atau 'No'",
     "any.required": "Status tanggungan wajib diisi",
   }),
 
-  // Validasi skor stres yang dioper balik oleh React State dari Route Tahap 1
+  hasHealthInsurance: Joi.boolean().default(false).messages({
+    "boolean.base": "Status asuransi kesehatan harus berupa boolean (true/false)",
+  }),
+
+  jobProspectStatus: Joi.string()
+    .valid("NO_LEADS", "APPLIED_ONLY", "INTERVIEW_STAGE", "SIGNED_OFFER")
+    .default("NO_LEADS")
+    .messages({
+      "any.only": "Status prospek kerja harus salah satu dari: NO_LEADS, APPLIED_ONLY, INTERVIEW_STAGE, SIGNED_OFFER",
+    }),
+
+  hasSideHustle: Joi.boolean().default(false).messages({
+    "boolean.base": "Status side hustle harus berupa boolean (true/false)",
+  }),
+
   workplaceStressScore: Joi.number().min(0).max(100).required().messages({
     "number.base": "Skor stres kerja harus berupa angka",
-    "number.min": "Skor stres kerja minimal 0",
-    "number.max": "Skor stres kerja maksimal 100",
-    "any.required": "Skor stres kerja dari tahap sebelumnya wajib dikirim balik",
+    "number.min": "Skor stres minimal 0",
+    "number.max": "Skor stres maksimal 100",
+    "any.required": "Skor stres kerja wajib diisi",
   }),
 });
