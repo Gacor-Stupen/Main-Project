@@ -93,7 +93,7 @@ export default function SkillInput({
             <h2 className="font-extrabold text-text-main text-xl tracking-tight font-heading">Skill Saat Ini</h2>
           </div>
           {selectedSkills.length > 0 && (
-            <span className="text-primary bg-primary/10 border border-primary/20 rounded-full text-[10px] font-black px-3 py-1 uppercase tracking-widest">
+            <span className="text-primary  text-[10px] font-black px-3 py-1 uppercase tracking-widest">
               {selectedSkills.length} Dipilih
             </span>
           )}

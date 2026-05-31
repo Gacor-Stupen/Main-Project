@@ -59,7 +59,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Kartu Prediksi Hero (Glassmorphism Premium) */}
           <div className="w-full lg:w-1/2 relative z-10 flex justify-center mt-10 lg:mt-0 animate-in fade-in zoom-in-95 duration-700 delay-200">
             <div className="bg-white/80 backdrop-blur-md p-8 rounded-[40px] shadow-2xl shadow-secondary/10 border border-secondary/20 w-full max-w-md transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
               

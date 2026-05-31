@@ -7,6 +7,7 @@ import Field from "../components/Field";
 import RatingInput from "../components/RatingInput";
 import ToggleInput from "../components/ToggleInput";
 import JobRolePicker from "../components/JobRolePicker";
+import Navbar from "../components/Navbar";
 
 const BASE_URL = "http://localhost:5001"; 
 
@@ -137,17 +138,7 @@ export default function AnalyzePage() {
       <div className="absolute top-10 left-10 w-72 h-72 bg-primary/15 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-secondary/15 rounded-full blur-3xl -z-10"></div>
 
-      <header className="bg-white/80 backdrop-blur-md border-b border-secondary/20 sticky top-0 z-50 px-8 py-4 flex items-center justify-between transition-all">
-        <div className="flex items-center gap-3">
-          <button 
-            onClick={() => navigate("/home")} 
-            className="w-10 h-10 bg-white border border-secondary/20 rounded-xl flex items-center justify-center text-text-main/70 hover:text-primary hover:border-primary/40 transition-colors shadow-sm"
-          >
-            <FiArrowLeft size={20} />
-          </button>
-          <p className="font-extrabold text-text-main text-xl tracking-tight hidden sm:block">ResignAjaDulu</p>
-        </div>
-      </header>
+      <Navbar />
 
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-16 py-12 flex flex-col lg:flex-row gap-12 lg:gap-20 relative z-10 flex-1">
         

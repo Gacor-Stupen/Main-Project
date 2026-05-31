@@ -33,20 +33,96 @@ export default function ResultPage() {
     if (saving || saved) return;
     setSaving(true);
     try {
-      const payload = { ...careerResult, financial: financialResult, ...formData };
-      const res = await fetch(`${BASE_URL}/api/histories`, {
+      const JOB_ROLE_MAP = { software_engineer: 6, data_analyst: 6, digital_marketing: 7, content_creator: 6, sales_executive: 7, sales_representative: 8, admin_hr: 3, project_manager: 4 };
+
+      // Hitung derived fields dari formData (mirror logika backend)
+      const overTime = Number(formData.overTime);
+      const distanceFromHome = Number(formData.distanceFromHome);
+      const totalWorkingYears = Number(formData.totalWorkingYears);
+      const numCompaniesWorked = Number(formData.numCompaniesWorked) || 1;
+      const yearsSinceLastPromotion = Number(formData.yearsSinceLastPromotion);
+      const jobSatisfaction = Number(formData.jobSatisfaction);
+      const environmentSatisfaction = Number(formData.environmentSatisfaction);
+
+      let workLifeBalance = 3;
+      if (overTime === 1) workLifeBalance -= 1;
+      if (distanceFromHome > 25) workLifeBalance -= 1;
+      if (workLifeBalance < 1) workLifeBalance = 1;
+
+      const yearsPerCompany = totalWorkingYears / numCompaniesWorked;
+      const overallSatisfaction = (jobSatisfaction + environmentSatisfaction + workLifeBalance) / 3;
+      const stagnationIndex = yearsSinceLastPromotion / (totalWorkingYears || 1);
+      const burnoutFlag = overTime === 1 && (jobSatisfaction <= 2 || workLifeBalance <= 2) ? 1 : 0;
+
+      const careerPayload = {
+        score:                   careerResult.score,
+        riskLevel:               careerResult.riskLevel,
+        monthlyIncome:           formData.monthlyIncome,
+        jobRole:                 JOB_ROLE_MAP[formData.jobRole] ?? 0,
+        overTime,
+        distanceFromHome,
+        totalWorkingYears,
+        numCompaniesWorked,
+        yearsAtCompany:          formData.yearsAtCompany,
+        yearsInCurrentRole:      formData.yearsInCurrentRole,
+        yearsSinceLastPromotion,
+        jobSatisfaction,
+        environmentSatisfaction,
+        workLifeBalance,
+        stagnationIndex,
+        burnoutFlag,
+        yearsPerCompany,
+        overallSatisfaction,
+        workplaceAnalysis: careerResult.workplaceAnalysis,
+        recommendation:careerResult.recommendation,
+      };
+
+      // 1. Simpan career dulu, ambil historyId dari response
+      const careerRes = await fetch(`${BASE_URL}/api/histories/career`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify(payload),
+        body: JSON.stringify(careerPayload),
       });
-      if (res.ok) {
-        setSaved(true);
-        localStorage.removeItem("analyzeResult");
-      } else {
-        const data = await res.json();
-        alert(data.message || "Gagal menyimpan riwayat.");
+      const careerData = await careerRes.json();
+      if (!careerRes.ok) {
+        alert(careerData.message || "Gagal menyimpan riwayat karier.");
+        return;
       }
+
+      // 2. Pakai historyId dari career untuk simpan financial
+      const historyId = careerData.data?.id;
+      const financialPayload = {
+        historyId,
+        finalReadinessScore:    financialResult.finalReadinessScore,
+        monthlySavings:         formData.monthlySavings,
+        monthlyExpenses:        formData.monthlyExpenses,
+        monthlyDebtObligations: formData.monthlyDebtObligations ?? 0,
+        hasDependents:          formData.hasDependents,
+        hasHealthInsurance:     formData.hasHealthInsurance,
+        hasSideHustle:          formData.hasSideHustle,
+        jobProspectStatus:      formData.jobProspectStatus,
+        workplaceStressScore:   formData.workplaceStressScore ?? careerResult.score,
+        status:                 financialResult.status,
+        recommendation:         financialResult.recommendation,
+        runwayMonths:           financialResult.financialAnalysis?.runwayMonths,
+        safetyScore:            financialResult.financialAnalysis?.safetyScore,
+        isSafe:                 financialResult.financialAnalysis?.isSafe,
+      };
+      const finRes = await fetch(`${BASE_URL}/api/histories/financial`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify(financialPayload),
+      });
+      const finData = await finRes.json();
+      if (!finRes.ok) {
+        alert(finData.message || "Gagal menyimpan riwayat finansial.");
+        return;
+      }
+
+      setSaved(true);
+      localStorage.removeItem("analyzeResult");
     } catch { alert("Gagal terhubung ke server."); }
     finally { setSaving(false); }
   };
@@ -132,7 +208,7 @@ export default function ResultPage() {
           </BaseCard>
 
           {/* 2. REKOMENDASI KARIER */}
-          <BaseCard title="Saran Karier AI">
+          <BaseCard title="Saran Karier">
             <div className="flex-1 flex items-start bg-background/40 p-5 rounded-3xl border border-secondary/10">
               <p className="text-[13px] font-semibold text-text-main/70 leading-relaxed italic relative pl-6 before:content-['“'] before:absolute before:left-0 before:-top-1 before:text-3xl before:text-secondary/30 before:italic">
                 {careerRecommendation}
@@ -141,7 +217,7 @@ export default function ResultPage() {
           </BaseCard>
 
           {/* 3. REKOMENDASI FINANSIAL */}
-          <BaseCard title="Saran Finansial AI">
+          <BaseCard title="Saran Finansial">
             <div className="flex-1 flex items-start bg-background/40 p-5 rounded-3xl border border-secondary/10">
               <p className="text-[13px] font-semibold text-text-main/70 leading-relaxed italic relative pl-6 before:content-['“'] before:absolute before:left-0 before:-top-1 before:text-3xl before:text-primary/20 before:italic">
                 {finRecommendation}

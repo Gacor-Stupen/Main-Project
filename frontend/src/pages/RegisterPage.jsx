@@ -123,14 +123,12 @@ function RegisterPage() {
                             />
                         </div>
 
-                        {/* Pesan Error Inline */}
                         {errorMsg && (
                             <div className="bg-danger/10 border border-danger/20 text-danger text-sm text-center p-3 rounded-xl font-bold animate-in fade-in zoom-in-95 duration-200">
                                 {errorMsg}
                             </div>
                         )}
 
-                        {/* Pesan Sukses Inline */}
                         {successMsg && (
                             <div className="bg-emerald-50 border border-emerald-200 text-emerald-600 text-sm text-center p-3 rounded-xl font-bold animate-in fade-in zoom-in-95 duration-200 flex items-center justify-center gap-2">
                                 <FiCheckCircle size={18} />

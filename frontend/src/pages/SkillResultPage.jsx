@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FiRefreshCw, FiTrendingUp, FiCalendar, FiAward, FiInfo } from "react-icons/fi";
+import { FiRefreshCw, FiInfo, FiSave, FiCheck } from "react-icons/fi";
 import Navbar from "../components/Navbar";
 import ScoreGauge from "../components/ScoreGauge";
 import BaseCard from "../components/BaseCard";
@@ -11,9 +11,36 @@ export default function SkillResultPage() {
 
   const { result, selectedSkills, minSalary, maxSalary } = location.state || {};
 
+  const [saved, setSaved]   = useState(false);
+  const [saving, setSaving] = useState(false);
+
   useEffect(() => {
     if (!result) navigate("/skill");
   }, [result, navigate]);
+
+  const handleSave = () => {
+    if (saving || saved) return;
+    setSaving(true);
+    try {
+      const existing = JSON.parse(localStorage.getItem("skillHistory") || "[]");
+      const newEntry = {
+        id: Date.now(),
+        created_at: new Date().toISOString(),
+        result,
+        selectedSkills,
+        minSalary,
+        maxSalary,
+        skillMatchPercentage: result.skillMatchPercentage,
+      };
+      const updated = [newEntry, ...existing].slice(0, 50);
+      localStorage.setItem("skillHistory", JSON.stringify(updated));
+      setSaved(true);
+    } catch (e) {
+      console.error("Gagal simpan skill history:", e);
+    } finally {
+      setSaving(false);
+    }
+  };
 
   if (!result) return null;
 
@@ -22,11 +49,10 @@ export default function SkillResultPage() {
     return `Rp ${(Number(val) / 1_000_000).toFixed(1)} Jt`;
   };
 
-  const matchPct = result?.skillMatchPercentage ?? 0;
-  const isGood = matchPct >= 70;
-  const isWarning = matchPct >= 40 && matchPct < 70;
+  const matchPct   = result?.skillMatchPercentage ?? 0;
+  const isGood     = matchPct >= 70;
+  const isWarning  = matchPct >= 40 && matchPct < 70;
   const gaugeColor = isGood ? "#10B981" : isWarning ? "#F59E0B" : "#BB4430";
-  const statusColorClass = isGood ? "text-success" : isWarning ? "text-amber-500" : "text-primary";
 
   return (
     <main className="min-h-screen bg-background text-text-main flex flex-col font-sans relative overflow-x-hidden">
@@ -41,21 +67,32 @@ export default function SkillResultPage() {
           <h1 className="text-4xl md:text-5xl font-black text-text-main tracking-tight font-heading mt-2 mb-3">
             Hasil Rekomendasi <span className="text-primary">Kariermu</span>
           </h1>
-          <p className="text-text-main/60 font-medium max-w-2xl mx-auto leading-relaxed mb-6">
+          <p className="text-text-main/60 font-medium max-w-2xl mx-auto leading-relaxed">
             Kami telah menganalisis profilmu berdasarkan <strong>{selectedSkills?.length} skill</strong> untuk target gaji <strong>{formatRupiah(minSalary)} - {formatRupiah(maxSalary)}</strong>.
           </p>
         </div>
 
         <div className="w-full flex flex-col items-center mb-14">
-          <ScoreGauge 
-            score={matchPct} 
-            customColor={gaugeColor} 
+          <ScoreGauge
+            score={matchPct}
+            customColor={gaugeColor}
             title="Market Fit Score"
             statusText={`Rating: ${matchPct >= 70 ? 'Excellent' : matchPct >= 40 ? 'Good' : 'Needs Improvement'}`}
           />
+          <p className="mt-3 text-sm font-black uppercase tracking-[0.2em] text-text-main/50">
+            Market Fit Score
+          </p>
+          <span className={`mt-3 px-5 py-1.5 rounded-full border text-xs font-black uppercase tracking-wider ${
+            isGood ? "bg-secondary/10 text-secondary border-secondary/20"
+              : isWarning ? "bg-amber-50 text-amber-600 border-amber-200"
+                : "bg-danger/10 text-danger border-danger/20"
+          }`}>
+            {isGood ? "Excellent" : isWarning ? "Good" : "Needs Improvement"}
+          </span>
         </div>
 
         <div className="flex flex-wrap gap-6 w-full mb-12 items-stretch justify-center">
+
           {result.summaryAdvice && (
             <div className="bg-white/50 backdrop-blur-sm border border-secondary/20 p-5 rounded-2xl shadow-sm inline-block w-full">
               <p className="text-sm font-bold text-text-main/80 leading-relaxed italic">
@@ -63,6 +100,7 @@ export default function SkillResultPage() {
               </p>
             </div>
           )}
+
           <BaseCard title="Best Time to Apply">
             <div className="text-center py-6 bg-background/50 rounded-[32px] border border-secondary/10 flex-1 flex flex-col justify-center">
               <p className="text-5xl font-black text-text-main font-heading mb-2">{result.bestHiringSeason?.recommendedMonth || "-"}</p>
@@ -102,14 +140,14 @@ export default function SkillResultPage() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center pt-8 border-t border-secondary/10">
-          <button 
+          <button
             onClick={() => navigate("/skill")}
-            className="w-full sm:w-auto px-12 py-4 rounded-full font-black text-xs bg-primary text-white hover:bg-primary/90 transition-all shadow-xl shadow-primary/25 flex items-center justify-center gap-3 uppercase tracking-widest hover:-translate-y-1"
+            className="w-full sm:w-auto px-12 py-4 rounded-full font-black text-xs bg-white text-text-main hover:bg-secondary/10 transition-all shadow-xl shadow-black/5 flex items-center justify-center gap-3 uppercase tracking-widest border border-secondary/30 hover:-translate-y-1"
           >
             <FiRefreshCw size={16} /> Analisis Ulang
           </button>
-          <button 
-            onClick={() => navigate("/analyze")} 
+          <button
+            onClick={() => navigate("/analyze")}
             className="w-full sm:w-auto px-12 py-4 rounded-full font-black text-xs bg-white text-text-main hover:bg-secondary/10 transition-all flex items-center justify-center gap-3 uppercase tracking-widest border border-secondary/30 hover:-translate-y-1"
           >
             Cek Kesiapan Resign
