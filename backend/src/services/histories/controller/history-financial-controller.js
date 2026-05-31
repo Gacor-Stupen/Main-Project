@@ -6,17 +6,10 @@ import response from "../../../utils/response.js";
 export const saveFinancialHistory = async (req, res) => {
   try {
     const userId = req.user.id;
-    const { historyId, finalReadinessScore } = req.body;
 
-    if (!historyId || !finalReadinessScore) {
-      return response(res, 400, "History ID and Final Readiness Score are required", null);
-    }
-
-    // Langsung simpan gabungan data dari Joi validator + finalReadinessScore dari body
     const newHistory = await FinancialHistoryRepository.createFinancialAnalysis({
-      historyId,
-      finalReadinessScore,
-      ...req.validated, // monthlySavings, monthlyExpenses, dll.
+      userId, 
+      ...req.validated, 
     });
 
     return response(res, 201, "Financial history saved successfully!", newHistory);
@@ -26,24 +19,38 @@ export const saveFinancialHistory = async (req, res) => {
   }
 };
 
+const getAllFinancialHistories = async (req, res) => {
+  const userId = req.user.id;
+  // Mengambil semua data finansial khusus milik user yang sedang login
+  const histories = await FinancialHistoryRepository.findByUserId(userId); 
+  return response(res, 200, "Fetch all user financial histories success", histories);
+};
+
+const getFinancialDetailByCareerId = async (req, res, careerId) => {
+  const financialHistory = await FinancialHistoryRepository.findByCareerId(careerId);
+
+  if (!financialHistory) {
+    return response(res, 404, "Financial history not found for this career session", null);
+  }
+
+  // Ambil data karier pasangannya untuk digabungkan
+  const careerHistory = await CareerHistoryRepository.findById(financialHistory.career_history_id || careerId);
+
+  return response(res, 200, "Fetch combined user histories success", {
+    career_analysis: careerHistory,
+    financial_analysis: financialHistory,
+  });
+};
+
 export const getUserHistoriesFinancial = async (req, res) => {
   try {
     const { id } = req.query;
 
-    // Ambil data gabungan karir + finansial dari database
-    const finacialHistories = await FinancialHistoryRepository.findById(id);
-
-    if (!finacialHistories) {
-      return response(res, 404, "Financial history not found", null);
+    if (id) {
+      return await getFinancialDetailByCareerId(req, res, id);
     }
 
-    const careerHistoryId = finacialHistories.career_history_id;
-    const careerHistory = await CareerHistoryRepository.findById(careerHistoryId);
-
-    return response(res, 200, "Fetch combined user histories success", {
-      career_analysis: careerHistory,
-      financial_analysis: finacialHistories,
-    });
+    return await getAllFinancialHistories(req, res);
   } catch (error) {
     console.error("Error in getUserHistoriesFinancial controller:", error.message);
     return response(res, 500, "Internal server error", null);

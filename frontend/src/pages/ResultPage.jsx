@@ -77,7 +77,7 @@ export default function ResultPage() {
         recommendation:careerResult.recommendation,
       };
 
-      // 1. Simpan career dulu, ambil historyId dari response
+      // nyiimpan career dulu, ambil historyId dari response
       const careerRes = await fetch(`${BASE_URL}/api/histories/career`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -90,7 +90,7 @@ export default function ResultPage() {
         return;
       }
 
-      // 2. Pakai historyId dari career untuk simpan financial
+      //Pakai historyId dari career untuk simpan financial
       const historyId = careerData.data?.id;
       const financialPayload = {
         historyId,
@@ -103,11 +103,11 @@ export default function ResultPage() {
         hasSideHustle:          formData.hasSideHustle,
         jobProspectStatus:      formData.jobProspectStatus,
         workplaceStressScore:   formData.workplaceStressScore ?? careerResult.score,
-        status:                 financialResult.status,
-        recommendation:         financialResult.recommendation,
-        runwayMonths:           financialResult.financialAnalysis?.runwayMonths,
-        safetyScore:            financialResult.financialAnalysis?.safetyScore,
-        isSafe:                 financialResult.financialAnalysis?.isSafe,
+        // status:                 financialResult.status,
+        // recommendation:         financialResult.recommendation,
+        // runwayMonths:           financialResult.financialAnalysis?.runwayMonths,
+        // safetyScore:            financialResult.financialAnalysis?.safetyScore,
+        // isSafe:                 financialResult.financialAnalysis?.isSafe,
       };
       const finRes = await fetch(`${BASE_URL}/api/histories/financial`, {
         method: "POST",
@@ -161,7 +161,7 @@ export default function ResultPage() {
             Realitas <span className="text-primary">Kariermu</span> Saat Ini
           </h1>
           <p className="text-text-main/60 font-medium leading-relaxed max-w-2xl mx-auto">
-            Berikut adalah kalkulasi prediksi AI mengenai kondisimu di kantor saat ini beserta kesiapan finansialmu jika memutuskan untuk resign.
+            Berikut adalah kalkulasi mengenai kondisimu di kantor saat ini beserta kesiapan finansialmu jika memutuskan untuk resign.
           </p>
         </div>
 
@@ -246,13 +246,6 @@ export default function ResultPage() {
             className="w-full sm:w-auto px-8 py-4 rounded-full font-black text-xs bg-white text-text-main hover:bg-secondary/10 transition-all flex items-center justify-center gap-2 uppercase tracking-widest border border-secondary/30 hover:-translate-y-1"
           >
             Analisis Ulang
-          </button>
-          
-          <button 
-            onClick={() => navigate("/history")} 
-            className="w-full sm:w-auto px-8 py-4 rounded-full font-black text-xs bg-white text-text-main hover:bg-secondary/10 transition-all flex items-center justify-center gap-2 uppercase tracking-widest border border-secondary/30 hover:-translate-y-1"
-          >
-             Riwayat
           </button>
 
         </div>

@@ -44,6 +44,30 @@ const FinancialHistoryRepository = {
 
     return rows[0];
   },
+
+  async findByCareerId(careerId) {
+    const text = `
+      SELECT * FROM histories_financial
+      WHERE career_history_id = $1
+      ORDER BY created_at DESC;
+    `;
+    const { rows } = await query(text, [careerId]);
+    
+    // Mengembalikan 1 baris data (karena hubungannya 1:1)
+    return rows[0];
+  },
+
+  async findByUserId(userId) {
+    const text = `
+      SELECT f.* FROM histories_financial f
+      INNER JOIN histories_career c ON f.career_history_id = c.id
+      WHERE c.user_id = $1
+      ORDER BY f.created_at DESC;
+    `;
+    const { rows } = await query(text, [userId]);
+    
+    return rows;
+  }
 };
 
 export default FinancialHistoryRepository;

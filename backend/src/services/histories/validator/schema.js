@@ -26,6 +26,7 @@ export const SaveHistoryCareerPayloadSchema = Joi.object({
 });
 
 export const SaveHistoryFinancialPayloadSchema = Joi.object({
+  historyId: Joi.string().required(),
   finalReadinessScore: Joi.number().min(0).max(100).required(),
   monthlySavings: Joi.number().min(0).required(),
   monthlyExpenses: Joi.number().min(0).required(),

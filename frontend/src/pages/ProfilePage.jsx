@@ -19,6 +19,7 @@ function StatCard({ label, value, icon, bg, color }) {
 }
 
 const TYPE_CONFIG = {
+  // Career-only (belum ada analisis finansialnya)
   career: {
     icon: <FiActivity size={18} />,
     bg: "bg-primary/10 text-primary",
@@ -27,22 +28,23 @@ const TYPE_CONFIG = {
     tag: "Karier",
     tagColor: "bg-primary/10 text-primary border-primary/20",
     scoreColor: (s) =>
-      s >= 70 ? "text-danger bg-danger/10 border-danger/20"
-      : s >= 40 ? "text-amber-600 bg-amber-50 border-amber-200"
-      : "text-secondary bg-secondary/10 border-secondary/20",
+      s >= 70 ? "text-danger"
+      : s >= 40 ? "text-amber-500"
+      : "text-secondary",
     scoreLabel: (s) => String(s),
   },
-  financial: {
+  // Sesi lengkap: career + financial digabung jadi 1 baris
+  combined: {
     icon: <FiDollarSign size={18} />,
     bg: "bg-secondary/10 text-secondary",
-    label: (item) => `Finansial · Skor ${item.finalReadinessScore ?? item.final_readiness_score}`,
-    score: (item) => Number(item.finalReadinessScore ?? item.final_readiness_score),
-    tag: "Finansial",
+    label: (item) => `Karier + Finansial`,
+    score: (item) => Number(item.final_readiness_score),
+    tag: "Lengkap",
     tagColor: "bg-secondary/10 text-secondary border-secondary/20",
     scoreColor: (s) =>
-      s >= 70 ? "text-secondary bg-secondary/10 border-secondary/20"
-      : s >= 40 ? "text-amber-600 bg-amber-50 border-amber-200"
-      : "text-danger bg-danger/10 border-danger/20",
+      s >= 70 ? "text-secondary"
+      : s >= 40 ? "text-amber-500"
+      : "text-danger",
     scoreLabel: (s) => String(s),
   },
 };
@@ -60,21 +62,15 @@ function HistoryRow({ item, type, onClick }) {
       onClick={onClick}
       className="w-full flex items-center gap-4 p-4 bg-white hover:bg-background rounded-2xl border border-secondary/10 transition-all group text-left"
     >
-      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${cfg.bg}`}>
-        {cfg.icon}
-      </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
           <p className="font-bold text-text-main text-sm truncate">{label}</p>
-          <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border shrink-0 ${cfg.tagColor}`}>
-            {cfg.tag}
-          </span>
         </div>
         <p className="text-xs text-text-main/40 font-medium flex items-center gap-1 mt-0.5">
           <FiClock size={11} /> {date}
         </p>
       </div>
-      <span className={`text-xs font-black px-2.5 py-1 rounded-full border shrink-0 ${cfg.scoreColor(score)}`}>
+      <span className={`text-sm font-black shrink-0 ${cfg.scoreColor(score)}`}>
         {cfg.scoreLabel(score)}
       </span>
       <FiChevronRight size={14} className="text-text-main/30 group-hover:text-primary transition-colors shrink-0" />
@@ -135,10 +131,17 @@ export default function ProfilePage() {
     ? user.name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase()
     : "U";
 
-  // Gabungkan riwayat karier & finansial, urutkan terbaru
+  // Career ID yang sudah punya pasangan finansial → jangan tampilkan career-nya lagi
+  const pairedCareerIds = new Set(
+    financialHistory.map((f) => f.career_history_id).filter(Boolean)
+  );
+
+  // Gabungkan: financial jadi "combined", career-only tetap tampil
   const allHistory = [
-    ...careerHistory.map((item) => ({ ...item, _type: "career" })),
-    ...financialHistory.map((item) => ({ ...item, _type: "financial" })),
+    ...careerHistory
+      .filter((item) => !pairedCareerIds.has(item.id))
+      .map((item) => ({ ...item, _type: "career" })),
+    ...financialHistory.map((item) => ({ ...item, _type: "combined" })),
   ].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
   return (
@@ -146,14 +149,6 @@ export default function ProfilePage() {
       <Navbar />
 
       <div className="max-w-3xl mx-auto w-full px-6 py-10 flex flex-col gap-8">
-
-        {/* Back */}
-        <button
-          onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-sm font-bold text-text-main/50 hover:text-primary transition-colors w-fit"
-        >
-          <FiArrowLeft size={16} /> Kembali
-        </button>
 
         {/*   HERO PROFILE CARD   */}
         <div className="bg-white rounded-[32px] p-8 shadow-xl shadow-black/5 border border-secondary/10 flex flex-col sm:flex-row items-center sm:items-start gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -192,7 +187,7 @@ export default function ProfilePage() {
           </div>
         )}
 
-        {/*   SEMUA RIWAYAT (tanpa limit)   */}
+        {/*   SEMUA RIWAYAT */}
         {!loading && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200 pb-10">
             <p className="text-xs font-black text-text-main/40 uppercase tracking-widest mb-3">
@@ -212,7 +207,11 @@ export default function ProfilePage() {
                     item={item}
                     type={item._type}
                     onClick={() => {
-                        navigate(`/history/${item.id}`);
+                        const targetId = item._type === "combined" 
+                           ? (item.career_history_id || item.historyId || item.id) 
+                           : item.id;
+                           
+                        navigate(`/history/${targetId}`);
                     }}
                   />
                 ))}
