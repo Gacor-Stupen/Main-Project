@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FiRefreshCw, FiClock, FiLoader, FiBriefcase, FiDollarSign, FiActivity, FiMessageSquare } from "react-icons/fi";
 import Navbar from '../components/Navbar';
 import ScoreGauge from '../components/ScoreGauge';
+import BaseCard from '../components/BaseCard';
 
 const BASE_URL = "http://localhost:5001";
 
@@ -52,22 +53,19 @@ export default function ResultPage() {
 
   if (!careerResult) return null;
 
-  // DATA Karir (Membulatkan angka desimal dari API)
+  // DATA KARIER
   const score = Math.round(careerResult.score || 0); 
   const riskLevel = careerResult.riskLevel || "LOW";
   const workplaceAnalysis = careerResult.workplaceAnalysis || "Belum ada analisis tempat kerja.";
-  const careerRecommendation = careerResult.recommendation || "Belum ada saran Karir.";
+  const careerRecommendation = careerResult.recommendation || "Belum ada saran karier.";
   
   // DATA FINANSIAL
   const finScore = financialResult?.finalReadinessScore || 0;
   const finRunway = financialResult?.financialAnalysis?.runwayMonths || 0;
   const finRecommendation = financialResult?.recommendation || "Belum ada saran finansial.";
 
-  // Logika Warna Gauge: Makin tinggi tingkat stres/risiko resign
+  // Logika Warna Gauge
   const gaugeColor = score >= 70 ? "#EF4444" : score >= 40 ? "#F59E0B" : "#10B981";
-
-  // Class dasar untuk Kartu (Glassmorphism + Flex properties)
-  const cardClass = "flex-1 min-w-[100%] md:min-w-[calc(50%-1.5rem)] bg-white/80 backdrop-blur-sm border border-secondary/20 rounded-[40px] p-8 shadow-xl shadow-secondary/5 flex flex-col min-h-[250px] transition-transform hover:scale-[1.01]";
 
   return (
     <main className="min-h-screen bg-background text-text-main flex flex-col font-sans relative overflow-x-hidden">
@@ -84,14 +82,14 @@ export default function ResultPage() {
         {/* HEADER SECTION */}
         <div className="text-center mb-10 w-full max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-black text-text-main tracking-tight font-heading mt-2 mb-4">
-            Realitas <span className="text-primary">Karirmu</span> Saat Ini
+            Realitas <span className="text-primary">Kariermu</span> Saat Ini
           </h1>
           <p className="text-text-main/60 font-medium leading-relaxed max-w-2xl mx-auto">
-            Berikut adalah kalkulasi mengenai kondisimu di kantor saat ini beserta kesiapan finansialmu jika memutuskan untuk resign.
+            Berikut adalah kalkulasi prediksi AI mengenai kondisimu di kantor saat ini beserta kesiapan finansialmu jika memutuskan untuk resign.
           </p>
         </div>
 
-        {/* ── GAUGE SCORE Karir ── */}
+        {/*GAUGE SCORE & ANALISIS TEMPAT KERJA */}
         <div className="w-full flex flex-col items-center mb-14">
           <ScoreGauge 
             score={score} 
@@ -99,71 +97,60 @@ export default function ResultPage() {
             title="Tingkat Stres & Potensi Resign"
             statusText={`Status Resign: ${riskLevel}`}
           />
-
-          <p className="mt-4 text-sm font-black uppercase tracking-[0.2em] text-text-main/50">
+          
+          <p className="mt-4 text-sm font-black uppercase tracking-[0.2em] text-text-main/50 mb-8">
             Stress Level
           </p>
+
+          {/* Analisis Tempat Kerja */}
+          <div className="max-w-3xl w-full text-center px-4 flex flex-col items-center gap-3">
+            <div className="flex items-center gap-2 text-primary">
+              <h3 className="font-black text-xs uppercase tracking-widest">
+                Analisis Kondisi Kerja
+              </h3>
+            </div>
+            <p className="text-base font-semibold text-text-main/80 leading-relaxed italic bg-white/40 p-4 rounded-2xl border border-secondary/10">
+              "{workplaceAnalysis}"
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-6 w-full mb-12 items-stretch justify-center">
           
-          {/* REALITAS FINANSIAL */}
-          <div className={cardClass}>
-            <div className="w-full flex items-center justify-between border-b border-secondary/10 pb-4 mb-6">
-              <h3 className="font-black text-xs uppercase tracking-widest text-text-main/40">Realitas Finansial</h3>
-            </div>
-            
+          {/* 1. REALITAS FINANSIAL */}
+          <BaseCard title="Realitas Finansial">
             <div className="flex gap-4 flex-1">
               <div className="flex-1 text-center py-6 bg-background/50 rounded-3xl border border-secondary/10 flex flex-col justify-center">
                 <p className="text-4xl font-black text-text-main font-heading mb-1">{finScore}</p>
-                <p className="text-[9px] font-black text-secondary uppercase tracking-widest">Skor Kesiapan Finansial</p>
+                <p className="text-[9px] font-black text-secondary uppercase tracking-widest">Skor Finansial</p>
               </div>
               <div className="flex-1 text-center py-6 bg-background/50 rounded-3xl border border-secondary/10 flex flex-col justify-center">
                 <p className="text-4xl font-black text-text-main font-heading mb-1">{finRunway}</p>
                 <p className="text-[9px] font-black text-secondary uppercase tracking-widest">Bulan Bertahan</p>
               </div>
             </div>
-          </div>
+          </BaseCard>
 
-          {/* ANALISIS TEMPAT KERJA */}
-          <div className={cardClass}>
-            <div className="w-full flex items-center justify-between border-b border-secondary/10 pb-4 mb-6">
-              <h3 className="font-black text-xs uppercase tracking-widest text-text-main/40">Analisis Tempat Kerja</h3>
-            </div>
-            <div className="flex-1 flex items-center bg-background/40 p-5 rounded-3xl border border-secondary/10">
-              <p className="text-sm font-bold text-text-main/80 leading-relaxed">
-                {workplaceAnalysis}
-              </p>
-            </div>
-          </div>
-
-          {/*  REKOMENDASI Karir */}
-          <div className={cardClass}>
-            <div className="w-full flex items-center justify-between border-b border-secondary/10 pb-4 mb-6">
-              <h3 className="font-black text-xs uppercase tracking-widest text-text-main/40">Saran Karir</h3>
-            </div>
+          {/* 2. REKOMENDASI KARIER */}
+          <BaseCard title="Saran Karier AI">
             <div className="flex-1 flex items-start bg-background/40 p-5 rounded-3xl border border-secondary/10">
               <p className="text-[13px] font-semibold text-text-main/70 leading-relaxed italic relative pl-6 before:content-['“'] before:absolute before:left-0 before:-top-1 before:text-3xl before:text-secondary/30 before:italic">
                 {careerRecommendation}
               </p>
             </div>
-          </div>
+          </BaseCard>
 
-          {/*  REKOMENDASI FINANSIAL */}
-          <div className={cardClass}>
-            <div className="w-full flex items-center justify-between border-b border-secondary/10 pb-4 mb-6">
-              <h3 className="font-black text-xs uppercase tracking-widest text-text-main/40">Saran Finansial</h3>
-            </div>
+          {/* 3. REKOMENDASI FINANSIAL */}
+          <BaseCard title="Saran Finansial AI">
             <div className="flex-1 flex items-start bg-background/40 p-5 rounded-3xl border border-secondary/10">
               <p className="text-[13px] font-semibold text-text-main/70 leading-relaxed italic relative pl-6 before:content-['“'] before:absolute before:left-0 before:-top-1 before:text-3xl before:text-primary/20 before:italic">
                 {finRecommendation}
               </p>
             </div>
-          </div>
+          </BaseCard>
 
         </div>
 
-        {/* BUTTON*/}
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center pt-8 border-t border-secondary/10">
           
           <button 
@@ -182,14 +169,14 @@ export default function ResultPage() {
             onClick={() => navigate("/analyze")} 
             className="w-full sm:w-auto px-8 py-4 rounded-full font-black text-xs bg-white text-text-main hover:bg-secondary/10 transition-all flex items-center justify-center gap-2 uppercase tracking-widest border border-secondary/30 hover:-translate-y-1"
           >
-            <FiRefreshCw size={14} /> Analisis Ulang
+            Analisis Ulang
           </button>
           
           <button 
             onClick={() => navigate("/history")} 
             className="w-full sm:w-auto px-8 py-4 rounded-full font-black text-xs bg-white text-text-main hover:bg-secondary/10 transition-all flex items-center justify-center gap-2 uppercase tracking-widest border border-secondary/30 hover:-translate-y-1"
           >
-            <FiClock size={14} /> Riwayat
+             Riwayat
           </button>
 
         </div>

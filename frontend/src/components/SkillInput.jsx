@@ -45,8 +45,7 @@ function SkillCheckbox({ skill, selected, onToggle }) {
     <button
       type="button"
       onClick={() => onToggle(skill.label)}
-      // PERUBAHAN: Menghapus w-full dan menggunakan w-fit agar menyesuaikan isi teks, serta padding disesuaikan agar lebih proporsional sebagai pill
-      className={`flex items-center gap-2.5 px-4 py-2.5 rounded-full border-2 text-sm font-bold transition-all duration-300 text-left w-fit shrink-0
+      className={`flex items-center gap-2.5 px-4 py-2.5 rounded-full border-2 text-sm font-bold transition-all duration-300 text-left w-fit shrink-0 group
         ${isSelected
           ? "bg-primary/5 border-primary text-primary shadow-sm shadow-primary/10"
           : "bg-white/80 border-secondary/20 text-text-main/70 hover:border-primary/40 hover:text-primary hover:bg-white"
@@ -94,7 +93,7 @@ export default function SkillInput({
             <h2 className="font-extrabold text-text-main text-xl tracking-tight font-heading">Skill Saat Ini</h2>
           </div>
           {selectedSkills.length > 0 && (
-            <span className=" text-primary  text-xs font-black px-3 py-1.5  uppercase tracking-wider">
+            <span className="text-primary bg-primary/10 border border-primary/20 rounded-full text-[10px] font-black px-3 py-1 uppercase tracking-widest">
               {selectedSkills.length} Dipilih
             </span>
           )}
@@ -120,7 +119,7 @@ export default function SkillInput({
               />
             ))
           ) : (
-            <div className="w-full flex flex-col items-center justify-center text-text-main/40 py-8 bg-background/50 rounded-2xl border border-dashed border-secondary/30">
+            <div className="w-full flex flex-col items-center justify-center text-text-main/40 py-8 bg-background/50 rounded-3xl border border-dashed border-secondary/30">
               <span className="text-2xl mb-2">🔍</span>
               <p className="text-sm font-bold">Skill tidak ditemukan.</p>
               <p className="text-xs font-medium mt-1">Coba kata kunci lain.</p>
@@ -130,30 +129,30 @@ export default function SkillInput({
 
         {/* Selected pills */}
         {selectedSkills.length > 0 && (
-          <div className="flex flex-wrap gap-2.5 p-4 bg-background/80 rounded-2xl border border-secondary/15 animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="flex flex-wrap gap-2.5 p-5 bg-background/80 rounded-3xl border border-secondary/15 animate-in fade-in slide-in-from-top-2 duration-300">
             {selectedSkills.map((s) => (
               <span
                 key={s}
                 onClick={() => onToggleSkill(s)}
-                className="inline-flex items-center gap-2 bg-white text-text-main border border-secondary/20 px-3.5 py-1.5 rounded-full text-xs font-bold cursor-pointer hover:bg-danger/10 hover:text-danger hover:border-danger/30 transition-all shadow-sm group"
+                className="inline-flex items-center gap-2 bg-white text-text-main border border-secondary/20 px-4 py-2 rounded-full text-xs font-bold cursor-pointer hover:bg-primary/10 hover:text-primary hover:border-primary/30 transition-all shadow-sm group"
                 title="Klik untuk hapus"
               >
                 {s} 
-                <span className="w-4 h-4 rounded-full bg-secondary/10 flex items-center justify-center text-text-main/50 group-hover:bg-danger/20 group-hover:text-danger transition-colors">×</span>
+                <span className="w-4 h-4 rounded-full bg-secondary/10 flex items-center justify-center text-text-main/50 group-hover:bg-primary/20 group-hover:text-primary transition-colors">×</span>
               </span>
             ))}
           </div>
         )}
       </div>
 
-      {/*Ekspektasi Gaji */}
+      {/* Ekspektasi Gaji */}
       <div className="flex flex-col gap-5">
         <div className="border-b border-secondary/15 pb-4 flex items-center gap-3">
           <h2 className="font-extrabold text-text-main text-xl tracking-tight font-heading">Ekspektasi Gaji</h2>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="flex flex-col gap-2">
+        <div className="flex flex-wrap gap-6 items-start">
+          <div className="flex-1 min-w-[100%] sm:min-w-[240px] flex flex-col gap-2">
             <label className="text-xs font-black text-text-main/60 uppercase tracking-widest pl-1">Gaji Minimum (IDR)</label>
             <input
               type="number"
@@ -165,7 +164,7 @@ export default function SkillInput({
             />
             {minSalary && <p className="text-xs text-primary font-bold pl-1 animate-in fade-in duration-300">{formatRupiah(minSalary)} / bulan</p>}
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex-1 min-w-[100%] sm:min-w-[240px] flex flex-col gap-2">
             <label className="text-xs font-black text-text-main/60 uppercase tracking-widest pl-1">Gaji Maksimum (IDR)</label>
             <input
               type="number"
@@ -182,8 +181,8 @@ export default function SkillInput({
 
       {/* Error */}
       {error && (
-        <div className="bg-danger/10 border border-danger/30 text-danger text-sm font-bold rounded-2xl px-5 py-4 flex items-center gap-3 animate-in shake duration-300">
-          <span className="text-lg">⚠️</span> {error}
+        <div className="bg-primary/10 border border-primary/30 text-primary text-sm font-bold rounded-2xl px-5 py-4 flex items-center gap-3 animate-in shake duration-300">
+          {error}
         </div>
       )}
 
@@ -191,10 +190,10 @@ export default function SkillInput({
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 mt-2 bg-primary hover:bg-primary/90 text-white font-extrabold tracking-wide rounded-2xl flex items-center justify-center gap-3 shadow-xl shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed transition-all hover:-translate-y-1 active:translate-y-0 text-base"
+        className="w-full py-4 mt-2 bg-primary hover:bg-primary/90 text-white font-extrabold tracking-wide rounded-2xl flex items-center justify-center gap-3 shadow-xl shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed transition-all hover:-translate-y-1 active:translate-y-0 text-sm uppercase tracking-widest"
       >
         {loading
-          ? <>AI Sedang Menganalisis...</>
+          ? <><FiLoader className="animate-spin" size={18} /> AI Sedang Menganalisis...</>
           : <>Analisis Job Market</>
         }
       </button>
