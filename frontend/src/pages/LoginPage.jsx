@@ -78,6 +78,7 @@ function LoginPage() {
                 value={password}
                 onChange={onChangePassword}
                 required
+                minLength="6"
                 className="w-full border-2 border-secondary/20 p-3 pl-12 rounded-xl focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all font-medium text-text-main placeholder:text-text-main/30"
               />
             </div>

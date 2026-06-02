@@ -105,6 +105,7 @@ function RegisterPage() {
                                 value={password} 
                                 onChange={onChangePassword} 
                                 required 
+                                minLength="6"
                                 disabled={isLoading || successMsg}
                                 className="w-full border-2 border-secondary/20 p-3 pl-12 rounded-xl focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all font-medium text-text-main placeholder:text-text-main/30 disabled:opacity-50 disabled:bg-slate-50"
                             />
@@ -118,6 +119,7 @@ function RegisterPage() {
                                 value={confirmPassword} 
                                 onChange={onChangeConfirmPassword} 
                                 required 
+                                minLength="6"
                                 disabled={isLoading || successMsg}
                                 className="w-full border-2 border-secondary/20 p-3 pl-12 rounded-xl focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all font-medium text-text-main placeholder:text-text-main/30 disabled:opacity-50 disabled:bg-slate-50"
                             />
