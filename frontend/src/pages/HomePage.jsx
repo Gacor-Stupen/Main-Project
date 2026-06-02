@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiSearch, FiClock, FiLogOut, FiArrowRight } from 'react-icons/fi';
 import Navbar from '../components/Navbar';
+import FAQ from '../components/FAQ';
 const BASE_URL = "http://localhost:5001";
 
 export default function HomePage() {
@@ -141,6 +142,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <FAQ />
       </main>
     </div>
   );
