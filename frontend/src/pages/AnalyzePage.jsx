@@ -9,7 +9,7 @@ import JobRolePicker from "../components/JobRolePicker";
 import Navbar from "../components/Navbar";
 import { FiBriefcase, FiClock, FiMapPin, FiTrendingUp, FiStar, FiActivity, FiDollarSign, FiChevronRight, FiArrowLeft, FiLoader, FiCheckCircle, FiShield } from "react-icons/fi";
 
-const BASE_URL = "http://localhost:5001"; 
+const BASE_URL = import.meta.env.VITE_BACKEND_SERVICE_URL; 
 
 const inputClass = "w-full bg-background border-2 border-secondary/20 rounded-2xl p-3.5 text-text-main font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all placeholder:text-text-main/30 placeholder:font-normal shadow-sm";
 
