@@ -61,7 +61,7 @@ git clone https://github.com/oMrPuPa/capstoneProject.git
 ```
 
 ### Environment Variables
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your .env file inside backend folder
 
 `HOST`  The host address where your backend server runs (e.g., localhost).
 
@@ -80,8 +80,6 @@ To run this project, you will need to add the following environment variables to
 `PGDATABASE`  The name of the database created for this project.
 
 `PGPORT`  The port number where your PostgreSQL instance is running (usually 5432).
-
-`AI_SERVICE_URL`  The local URL where your Python FastAPI service endpoint is exposed.
 
 `GEMINI_API_KEY`  You can create API KEY free in https://aistudio.google.com.
 
