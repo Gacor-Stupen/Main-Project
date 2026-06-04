@@ -20,7 +20,7 @@ import {
 
 import ReactMarkdown from "react-markdown";
 
-const BASE_URL = "http://localhost:5001";
+const BASE_URL = import.meta.env.VITE_BACKEND_SERVICE_URL;
 
 export default function ResultPage() {
   const navigate = useNavigate();
