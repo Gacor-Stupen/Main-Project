@@ -170,6 +170,7 @@ export default function ResultPage() {
   const finScore = financialResult?.finalReadinessScore || 0;
   const finRunway = financialResult?.financialAnalysis?.runwayMonths || 0;
   const finRecommendation = financialResult?.recommendation || "Belum ada saran finansial.";
+  const safetyScore = financialResult?.financialAnalysis?.safetyScore || 0;
 
   // Logika Warna Gauge
   const gaugeColor = finScore >= 70 ? "#EF4444" : finScore >= 40 ? "#F59E0B" : "#10B981";
@@ -204,7 +205,7 @@ export default function ResultPage() {
             statusText={`Status Resign: ${riskLevel}`}
           />
 
-          <p className="mt-4 text-sm font-black uppercase tracking-[0.2em] text-text-main/50 mb-8">Stress Level</p>
+          <p className="mt-4 text-sm font-black uppercase tracking-[0.2em] text-text-main/50 mb-8">Skor Siap Resign</p>
 
           {/* Analisis Tempat Kerja */}
           <div className="max-w-3xl w-full text-center px-4 flex flex-col items-center gap-3">

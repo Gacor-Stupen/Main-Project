@@ -1,0 +1,501 @@
+job_id,company_name,title,location,work_type,experience_level,remote_allowed,min_salary,max_salary,med_salary,industry,company_size
+100000,Uber,Data Scientist,"Austin, TX",Full-time,Director,0.0,79330.0,129019.0,104174.5,E-Commerce,501-1000 employees
+100001,Amazon,DevOps Engineer,"Seattle, WA",Contract,Entry level,0.0,102409.0,171060.0,136734.5,Healthcare,201-500 employees
+100002,Airbnb,Data Scientist,"Austin, TX",Full-time,Director,0.0,81778.0,115671.0,98724.5,Healthcare,1-10 employees
+100003,Apple,Data Scientist,"Boston, MA",Internship,Mid-Senior level,0.0,84264.0,136536.0,110400.0,Technology,51-200 employees
+100004,Uber,DevOps Engineer,"Chicago, IL",Contract,Associate,0.0,119675.0,140557.0,130116.0,Technology,11-50 employees
+100005,LinkedIn,Data Engineer,"Chicago, IL",Part-time,Mid-Senior level,0.0,65075.0,144613.0,104844.0,E-Commerce,1-10 employees
+100006,Meta,Data Scientist,"San Francisco, CA",Full-time,Associate,0.0,70412.0,127941.0,99176.5,Automotive,11-50 employees
+100007,Uber,DevOps Engineer,"Chicago, IL",Full-time,Associate,0.0,108454.0,167089.0,137771.5,Automotive,501-1000 employees
+100008,Airbnb,Product Manager,"Chicago, IL",Contract,Entry level,0.0,88365.0,164480.0,126422.5,E-Commerce,Unknown
+100009,Apple,Machine Intelligence Analyst,"Seattle, WA",Internship,Entry level,0.0,67230.0,116765.0,91997.5,Technology,51-200 employees
+100010,Amazon,Machine Intelligence Analyst,"Chicago, IL",Contract,Director,0.0,108200.0,141069.0,124634.5,Technology,10000+ employees
+100011,Airbnb,Data Scientist,"San Francisco, CA",Internship,Executive,0.0,71002.0,98168.0,84585.0,Automotive,51-200 employees
+100012,Airbnb,Data Engineer,"New York, NY",Internship,Entry level,0.0,73947.0,106929.0,90438.0,Financial Services,501-1000 employees
+100013,Meta,Data Engineer,"Boston, MA",Full-time,Associate,0.0,73686.0,134383.0,104034.5,Financial Services,51-200 employees
+100014,Netflix,Product Manager,"Seattle, WA",Contract,Director,0.0,89304.0,147419.0,118361.5,Technology,10000+ employees
+100015,Apple,Data Scientist,"New York, NY",Contract,Director,0.0,110683.0,137952.0,124317.5,Financial Services,201-500 employees
+100016,Microsoft,Machine Intelligence Analyst,"Seattle, WA",Internship,Executive,0.0,73074.0,152028.0,112551.0,Entertainment,11-50 employees
+100017,Airbnb,Data Engineer,"Remote, US",Contract,Associate,0.0,112142.0,160206.0,136174.0,E-Commerce,10000+ employees
+100018,Netflix,Data Scientist,"Austin, TX",Part-time,Mid-Senior level,0.0,116307.0,193584.0,154945.5,E-Commerce,1-10 employees
+100019,Microsoft,Frontend Developer,"Remote, US",Part-time,Mid-Senior level,0.0,64493.0,98020.0,81256.5,Technology,501-1000 employees
+100020,Apple,Data Engineer,"Chicago, IL",Contract,Mid-Senior level,0.0,118487.0,140941.0,129714.0,Healthcare,201-500 employees
+100021,Google,DevOps Engineer,"New York, NY",Contract,Associate,0.0,110085.0,150963.0,130524.0,Automotive,1-10 employees
+100022,LinkedIn,Frontend Developer,"Chicago, IL",Internship,Associate,0.0,94228.0,165326.0,129777.0,Technology,1-10 employees
+100023,Netflix,Data Engineer,"Austin, TX",Part-time,Entry level,0.0,74140.0,107131.0,90635.5,Financial Services,501-1000 employees
+100024,Stripe,Machine Intelligence Analyst,"Seattle, WA",Part-time,Director,0.0,111875.0,134683.0,123279.0,Automotive,201-500 employees
+100025,Google,Software Engineer,"Austin, TX",Full-time,Associate,0.0,91655.0,151065.0,121360.0,Healthcare,Unknown
+100026,LinkedIn,Frontend Developer,"San Francisco, CA",Internship,Mid-Senior level,0.0,103472.0,160065.0,131768.5,Financial Services,1-10 employees
+100027,Meta,Product Manager,"Austin, TX",Full-time,Mid-Senior level,0.0,109437.0,165741.0,137589.0,Entertainment,1-10 employees
+100028,Uber,Product Manager,"San Francisco, CA",Part-time,Mid-Senior level,0.0,109416.0,159802.0,134609.0,Financial Services,201-500 employees
+100029,Amazon,Machine Intelligence Analyst,"Austin, TX",Internship,Entry level,0.0,119711.0,194931.0,157321.0,Entertainment,51-200 employees
+100030,Stripe,Data Engineer,"Boston, MA",Contract,Entry level,0.0,66816.0,134893.0,100854.5,Automotive,1-10 employees
+100031,Meta,Data Scientist,"San Francisco, CA",Internship,Entry level,0.0,71639.0,95441.0,83540.0,Entertainment,11-50 employees
+100032,Apple,Data Engineer,"New York, NY",Contract,Entry level,0.0,107192.0,155945.0,131568.5,Automotive,201-500 employees
+100033,Meta,Machine Intelligence Analyst,"Chicago, IL",Contract,Mid-Senior level,1.0,106733.0,147816.0,127274.5,Automotive,1-10 employees
+100034,Uber,Product Manager,"Chicago, IL",Internship,Mid-Senior level,0.0,89492.0,127846.0,108669.0,Automotive,501-1000 employees
+100035,Apple,Data Engineer,"Remote, US",Contract,Entry level,0.0,110914.0,153104.0,132009.0,Automotive,10000+ employees
+100036,Stripe,Product Manager,"Chicago, IL",Full-time,Associate,0.0,71240.0,97382.0,84311.0,Automotive,11-50 employees
+100037,Uber,Frontend Developer,"Seattle, WA",Part-time,Mid-Senior level,0.0,92698.0,141096.0,116897.0,Financial Services,10000+ employees
+100038,Microsoft,Data Scientist,"Boston, MA",Contract,Director,0.0,86957.0,158928.0,122942.5,Automotive,10000+ employees
+100039,Amazon,Frontend Developer,"Austin, TX",Full-time,Executive,0.0,119613.0,181475.0,150544.0,Financial Services,1-10 employees
+100040,Stripe,Product Manager,"Remote, US",Contract,Entry level,0.0,92808.0,145940.0,119374.0,Automotive,11-50 employees
+100041,Microsoft,Product Manager,"Seattle, WA",Part-time,Mid-Senior level,0.0,65827.0,139237.0,102532.0,Entertainment,11-50 employees
+100042,LinkedIn,Software Engineer,"Seattle, WA",Full-time,Entry level,0.0,92762.0,132265.0,112513.5,Automotive,51-200 employees
+100043,Stripe,Software Engineer,"San Francisco, CA",Part-time,Mid-Senior level,0.0,68259.0,148161.0,108210.0,Healthcare,10000+ employees
+100044,LinkedIn,Frontend Developer,"Chicago, IL",Part-time,Mid-Senior level,0.0,110139.0,178595.0,144367.0,Automotive,11-50 employees
+100045,Apple,DevOps Engineer,"New York, NY",Full-time,Entry level,0.0,74849.0,129480.0,102164.5,Automotive,51-200 employees
+100046,Microsoft,Frontend Developer,"New York, NY",Full-time,Mid-Senior level,0.0,76232.0,112731.0,94481.5,Entertainment,201-500 employees
+100047,Amazon,Software Engineer,"Remote, US",Full-time,Entry level,0.0,100572.0,160424.0,130498.0,E-Commerce,51-200 employees
+100048,Uber,Product Manager,"Boston, MA",Internship,Entry level,0.0,84173.0,112189.0,98181.0,Entertainment,501-1000 employees
+100049,Airbnb,Machine Intelligence Analyst,"New York, NY",Full-time,Mid-Senior level,0.0,114869.0,137253.0,126061.0,Healthcare,Unknown
+100050,Meta,Frontend Developer,"Austin, TX",Full-time,Mid-Senior level,0.0,112350.0,147422.0,129886.0,E-Commerce,1-10 employees
+100051,Google,Product Manager,"New York, NY",Full-time,Mid-Senior level,0.0,65374.0,122077.0,93725.5,Technology,201-500 employees
+100052,Amazon,Machine Intelligence Analyst,"Remote, US",Full-time,Mid-Senior level,0.0,81174.0,147069.0,114121.5,Technology,Unknown
+100053,Microsoft,Machine Intelligence Analyst,"New York, NY",Contract,Executive,0.0,83567.0,118049.0,100808.0,Healthcare,Unknown
+100054,Airbnb,Software Engineer,"Austin, TX",Internship,Entry level,0.0,95292.0,155802.0,125547.0,Entertainment,201-500 employees
+100055,Amazon,Frontend Developer,"San Francisco, CA",Part-time,Mid-Senior level,0.0,69277.0,138210.0,103743.5,Financial Services,501-1000 employees
+100056,Microsoft,Data Engineer,"Boston, MA",Full-time,Mid-Senior level,0.0,91600.0,133426.0,112513.0,Healthcare,51-200 employees
+100057,Netflix,Data Scientist,"Remote, US",Contract,Mid-Senior level,0.0,111631.0,134121.0,122876.0,E-Commerce,1-10 employees
+100058,Netflix,Software Engineer,"San Francisco, CA",Contract,Executive,0.0,69885.0,146017.0,107951.0,E-Commerce,51-200 employees
+100059,LinkedIn,Software Engineer,"San Francisco, CA",Contract,Associate,0.0,119659.0,185751.0,152705.0,Automotive,11-50 employees
+100060,Amazon,Data Engineer,"San Francisco, CA",Part-time,Mid-Senior level,0.0,114306.0,159824.0,137065.0,Technology,51-200 employees
+100061,Netflix,Data Scientist,"Seattle, WA",Full-time,Associate,0.0,60778.0,104823.0,82800.5,E-Commerce,201-500 employees
+100062,Microsoft,Product Manager,"Boston, MA",Internship,Executive,1.0,89165.0,160041.0,124603.0,Healthcare,1-10 employees
+100063,LinkedIn,DevOps Engineer,"Chicago, IL",Internship,Director,0.0,118929.0,165839.0,142384.0,E-Commerce,51-200 employees
+100064,Microsoft,Frontend Developer,"Boston, MA",Contract,Associate,0.0,61492.0,106058.0,83775.0,Healthcare,1-10 employees
+100065,LinkedIn,DevOps Engineer,"Seattle, WA",Part-time,Associate,0.0,90462.0,162381.0,126421.5,Financial Services,1-10 employees
+100066,Amazon,Product Manager,"Chicago, IL",Part-time,Entry level,1.0,109812.0,163717.0,136764.5,Automotive,11-50 employees
+100067,Airbnb,Software Engineer,"Boston, MA",Part-time,Entry level,0.0,110500.0,157603.0,134051.5,Technology,11-50 employees
+100068,Uber,Data Scientist,"San Francisco, CA",Internship,Mid-Senior level,0.0,73615.0,146884.0,110249.5,E-Commerce,201-500 employees
+100069,Stripe,Software Engineer,"Remote, US",Contract,Entry level,0.0,118643.0,174831.0,146737.0,Healthcare,501-1000 employees
+100070,Airbnb,Machine Intelligence Analyst,"Chicago, IL",Full-time,Mid-Senior level,1.0,104900.0,130745.0,117822.5,Entertainment,Unknown
+100071,Apple,Software Engineer,"Austin, TX",Internship,Entry level,0.0,102946.0,144108.0,123527.0,Technology,1-10 employees
+100072,Microsoft,Software Engineer,"Austin, TX",Contract,Mid-Senior level,0.0,67851.0,124525.0,96188.0,Financial Services,501-1000 employees
+100073,Apple,Product Manager,"New York, NY",Contract,Associate,0.0,76288.0,149077.0,112682.5,Healthcare,Unknown
+100074,Airbnb,Product Manager,"Chicago, IL",Full-time,Director,0.0,67156.0,106493.0,86824.5,Automotive,Unknown
+100075,LinkedIn,Product Manager,"Remote, US",Full-time,Entry level,0.0,62044.0,104357.0,83200.5,Automotive,201-500 employees
+100076,Stripe,DevOps Engineer,"Seattle, WA",Full-time,Mid-Senior level,0.0,67368.0,114311.0,90839.5,Financial Services,Unknown
+100077,Stripe,Machine Intelligence Analyst,"San Francisco, CA",Part-time,Director,0.0,79900.0,112313.0,96106.5,Financial Services,Unknown
+100078,Google,Product Manager,"New York, NY",Full-time,Entry level,1.0,90600.0,110876.0,100738.0,Automotive,1-10 employees
+100079,Stripe,Data Scientist,"Austin, TX",Contract,Associate,0.0,106403.0,177554.0,141978.5,E-Commerce,1-10 employees
+100080,Uber,DevOps Engineer,"Seattle, WA",Full-time,Mid-Senior level,1.0,85634.0,123245.0,104439.5,E-Commerce,10000+ employees
+100081,Stripe,Data Engineer,"Seattle, WA",Contract,Mid-Senior level,0.0,69168.0,128273.0,98720.5,Healthcare,501-1000 employees
+100082,Airbnb,Data Scientist,"San Francisco, CA",Internship,Executive,1.0,80961.0,112905.0,96933.0,Entertainment,51-200 employees
+100083,Google,Frontend Developer,"Chicago, IL",Part-time,Entry level,0.0,109879.0,182766.0,146322.5,Healthcare,11-50 employees
+100084,Airbnb,Frontend Developer,"Austin, TX",Internship,Mid-Senior level,0.0,119871.0,155777.0,137824.0,Entertainment,51-200 employees
+100085,Airbnb,Data Scientist,"Remote, US",Internship,Associate,0.0,104096.0,173943.0,139019.5,Financial Services,501-1000 employees
+100086,Meta,Product Manager,"Seattle, WA",Contract,Entry level,0.0,106087.0,184740.0,145413.5,Technology,11-50 employees
+100087,Google,Data Engineer,"San Francisco, CA",Internship,Mid-Senior level,0.0,83852.0,124388.0,104120.0,Healthcare,51-200 employees
+100088,Airbnb,Data Engineer,"Remote, US",Contract,Executive,0.0,93110.0,170163.0,131636.5,Healthcare,10000+ employees
+100089,Meta,DevOps Engineer,"Chicago, IL",Full-time,Entry level,0.0,92174.0,168796.0,130485.0,Entertainment,11-50 employees
+100090,Meta,Data Engineer,"Austin, TX",Full-time,Director,0.0,94215.0,142025.0,118120.0,Financial Services,1-10 employees
+100091,Google,Frontend Developer,"Chicago, IL",Contract,Mid-Senior level,0.0,86955.0,119261.0,103108.0,Financial Services,51-200 employees
+100092,Apple,Machine Intelligence Analyst,"Seattle, WA",Full-time,Mid-Senior level,0.0,66581.0,143270.0,104925.5,Entertainment,11-50 employees
+100093,LinkedIn,Product Manager,"Remote, US",Part-time,Mid-Senior level,0.0,104619.0,135122.0,119870.5,Financial Services,10000+ employees
+100094,Uber,Data Engineer,"Remote, US",Internship,Mid-Senior level,1.0,66317.0,105542.0,85929.5,Automotive,Unknown
+100095,LinkedIn,DevOps Engineer,"Remote, US",Part-time,Director,1.0,109678.0,166654.0,138166.0,E-Commerce,11-50 employees
+100096,Stripe,Frontend Developer,"Seattle, WA",Internship,Director,1.0,102856.0,134446.0,118651.0,Automotive,11-50 employees
+100097,Uber,Machine Intelligence Analyst,"Seattle, WA",Full-time,Mid-Senior level,0.0,105714.0,183599.0,144656.5,Technology,10000+ employees
+100098,Stripe,Software Engineer,"Chicago, IL",Part-time,Associate,0.0,86649.0,117535.0,102092.0,Healthcare,Unknown
+100099,Airbnb,Software Engineer,"New York, NY",Full-time,Mid-Senior level,0.0,83132.0,115998.0,99565.0,Technology,51-200 employees
+100100,Microsoft,Machine Intelligence Analyst,"Chicago, IL",Internship,Mid-Senior level,0.0,76789.0,97877.0,87333.0,Healthcare,201-500 employees
+100101,Google,Frontend Developer,"Austin, TX",Contract,Mid-Senior level,0.0,74567.0,97930.0,86248.5,E-Commerce,51-200 employees
+100102,Uber,DevOps Engineer,"San Francisco, CA",Contract,Mid-Senior level,0.0,74868.0,127660.0,101264.0,Financial Services,Unknown
+100103,Uber,Machine Intelligence Analyst,"Remote, US",Part-time,Mid-Senior level,0.0,84370.0,114134.0,99252.0,Automotive,501-1000 employees
+100104,Airbnb,Product Manager,"New York, NY",Full-time,Associate,0.0,102533.0,177829.0,140181.0,Entertainment,10000+ employees
+100105,Apple,Product Manager,"San Francisco, CA",Full-time,Mid-Senior level,0.0,90483.0,165303.0,127893.0,Automotive,51-200 employees
+100106,Meta,Software Engineer,"New York, NY",Part-time,Entry level,1.0,112892.0,153512.0,133202.0,E-Commerce,11-50 employees
+100107,Airbnb,Data Engineer,"Boston, MA",Contract,Entry level,0.0,72466.0,135193.0,103829.5,Technology,10000+ employees
+100108,Netflix,DevOps Engineer,"Chicago, IL",Internship,Mid-Senior level,0.0,88803.0,121738.0,105270.5,Entertainment,1-10 employees
+100109,Meta,Software Engineer,"Seattle, WA",Part-time,Associate,1.0,78230.0,106298.0,92264.0,Financial Services,Unknown
+100110,Google,Data Engineer,"Remote, US",Internship,Mid-Senior level,0.0,77862.0,149249.0,113555.5,E-Commerce,51-200 employees
+100111,Meta,Data Engineer,"Chicago, IL",Contract,Mid-Senior level,0.0,103355.0,130650.0,117002.5,Entertainment,10000+ employees
+100112,Apple,Product Manager,"San Francisco, CA",Full-time,Mid-Senior level,0.0,91259.0,152419.0,121839.0,E-Commerce,51-200 employees
+100113,Meta,Frontend Developer,"Boston, MA",Contract,Mid-Senior level,0.0,93539.0,124929.0,109234.0,E-Commerce,10000+ employees
+100114,Google,Data Scientist,"Boston, MA",Part-time,Mid-Senior level,0.0,81909.0,143125.0,112517.0,Financial Services,11-50 employees
+100115,Apple,Frontend Developer,"Boston, MA",Full-time,Mid-Senior level,1.0,90795.0,130926.0,110860.5,Healthcare,1-10 employees
+100116,LinkedIn,Data Scientist,"San Francisco, CA",Part-time,Associate,0.0,109068.0,158286.0,133677.0,Entertainment,1-10 employees
+100117,Uber,Machine Intelligence Analyst,"San Francisco, CA",Part-time,Director,1.0,68770.0,99203.0,83986.5,Financial Services,501-1000 employees
+100118,Uber,Product Manager,"San Francisco, CA",Contract,Mid-Senior level,0.0,71093.0,106131.0,88612.0,E-Commerce,10000+ employees
+100119,Stripe,Data Engineer,"San Francisco, CA",Part-time,Entry level,0.0,106571.0,178898.0,142734.5,Financial Services,51-200 employees
+100120,LinkedIn,DevOps Engineer,"Boston, MA",Contract,Entry level,0.0,60193.0,108375.0,84284.0,Healthcare,1-10 employees
+100121,LinkedIn,Data Scientist,"Boston, MA",Full-time,Entry level,0.0,94775.0,126303.0,110539.0,Automotive,Unknown
+100122,Meta,Frontend Developer,"New York, NY",Contract,Mid-Senior level,0.0,77569.0,118850.0,98209.5,Entertainment,1-10 employees
+100123,Uber,Data Engineer,"Chicago, IL",Full-time,Mid-Senior level,1.0,111546.0,185735.0,148640.5,Healthcare,201-500 employees
+100124,Google,Data Scientist,"Remote, US",Contract,Mid-Senior level,0.0,71190.0,139701.0,105445.5,Technology,201-500 employees
+100125,Amazon,Data Scientist,"Seattle, WA",Internship,Mid-Senior level,0.0,102752.0,179331.0,141041.5,Entertainment,1-10 employees
+100126,Amazon,Data Scientist,"Boston, MA",Internship,Entry level,0.0,92327.0,120932.0,106629.5,Healthcare,10000+ employees
+100127,Apple,DevOps Engineer,"Seattle, WA",Part-time,Mid-Senior level,0.0,102070.0,156852.0,129461.0,E-Commerce,501-1000 employees
+100128,Uber,Product Manager,"Chicago, IL",Contract,Entry level,0.0,80389.0,101770.0,91079.5,Entertainment,1-10 employees
+100129,Uber,DevOps Engineer,"Chicago, IL",Contract,Mid-Senior level,0.0,100197.0,121295.0,110746.0,Entertainment,11-50 employees
+100130,Amazon,Software Engineer,"Seattle, WA",Full-time,Entry level,0.0,62261.0,102071.0,82166.0,Financial Services,51-200 employees
+100131,Uber,Data Engineer,"Boston, MA",Part-time,Associate,0.0,112888.0,185695.0,149291.5,E-Commerce,501-1000 employees
+100132,Meta,Product Manager,"Seattle, WA",Contract,Entry level,0.0,88369.0,132691.0,110530.0,Technology,11-50 employees
+100133,Netflix,Product Manager,"New York, NY",Part-time,Executive,0.0,86512.0,148381.0,117446.5,Automotive,501-1000 employees
+100134,Microsoft,Product Manager,"Austin, TX",Internship,Mid-Senior level,0.0,66716.0,119671.0,93193.5,Healthcare,11-50 employees
+100135,LinkedIn,Frontend Developer,"Boston, MA",Contract,Associate,0.0,81259.0,145975.0,113617.0,Financial Services,51-200 employees
+100136,Stripe,Product Manager,"Boston, MA",Contract,Mid-Senior level,1.0,88933.0,119140.0,104036.5,Healthcare,51-200 employees
+100137,Apple,DevOps Engineer,"Remote, US",Part-time,Associate,0.0,101689.0,143482.0,122585.5,Technology,201-500 employees
+100138,Netflix,Product Manager,"San Francisco, CA",Contract,Associate,0.0,64378.0,86470.0,75424.0,Technology,10000+ employees
+100139,Amazon,Machine Intelligence Analyst,"Austin, TX",Part-time,Mid-Senior level,0.0,100583.0,148803.0,124693.0,Entertainment,11-50 employees
+100140,LinkedIn,Data Engineer,"Chicago, IL",Contract,Mid-Senior level,1.0,106546.0,145060.0,125803.0,Technology,201-500 employees
+100141,Uber,Product Manager,"Boston, MA",Full-time,Mid-Senior level,0.0,79835.0,137845.0,108840.0,Healthcare,11-50 employees
+100142,Stripe,Data Engineer,"Seattle, WA",Part-time,Mid-Senior level,0.0,89033.0,117582.0,103307.5,E-Commerce,201-500 employees
+100143,Uber,Machine Intelligence Analyst,"Austin, TX",Contract,Entry level,1.0,84000.0,126031.0,105015.5,E-Commerce,51-200 employees
+100144,Google,Machine Intelligence Analyst,"Remote, US",Internship,Mid-Senior level,0.0,105496.0,130681.0,118088.5,Entertainment,501-1000 employees
+100145,Google,Data Engineer,"Chicago, IL",Contract,Mid-Senior level,0.0,70332.0,105603.0,87967.5,Automotive,Unknown
+100146,Stripe,Data Scientist,"San Francisco, CA",Internship,Mid-Senior level,0.0,102604.0,128380.0,115492.0,Healthcare,201-500 employees
+100147,Stripe,Software Engineer,"San Francisco, CA",Internship,Associate,0.0,62800.0,142566.0,102683.0,Healthcare,11-50 employees
+100148,Amazon,Frontend Developer,"Remote, US",Full-time,Mid-Senior level,1.0,89538.0,121987.0,105762.5,Technology,11-50 employees
+100149,Stripe,Data Scientist,"Remote, US",Part-time,Executive,0.0,90119.0,134416.0,112267.5,Healthcare,Unknown
+100150,Meta,Data Scientist,"Seattle, WA",Contract,Mid-Senior level,0.0,68333.0,145032.0,106682.5,Financial Services,10000+ employees
+100151,Uber,DevOps Engineer,"Boston, MA",Full-time,Mid-Senior level,0.0,65410.0,126001.0,95705.5,Automotive,51-200 employees
+100152,Netflix,Frontend Developer,"San Francisco, CA",Contract,Mid-Senior level,0.0,77839.0,113556.0,95697.5,Technology,11-50 employees
+100153,Airbnb,Frontend Developer,"Chicago, IL",Internship,Mid-Senior level,0.0,116044.0,176167.0,146105.5,Financial Services,1-10 employees
+100154,Stripe,Data Scientist,"Austin, TX",Part-time,Associate,0.0,90519.0,149752.0,120135.5,Entertainment,501-1000 employees
+100155,Apple,Product Manager,"Chicago, IL",Contract,Entry level,0.0,65808.0,131313.0,98560.5,E-Commerce,201-500 employees
+100156,Google,DevOps Engineer,"New York, NY",Contract,Associate,0.0,66796.0,137445.0,102120.5,Entertainment,10000+ employees
+100157,Meta,DevOps Engineer,"New York, NY",Internship,Mid-Senior level,0.0,81180.0,147272.0,114226.0,E-Commerce,Unknown
+100158,LinkedIn,Machine Intelligence Analyst,"Remote, US",Contract,Mid-Senior level,0.0,114245.0,144595.0,129420.0,Entertainment,501-1000 employees
+100159,Airbnb,Frontend Developer,"Seattle, WA",Contract,Mid-Senior level,0.0,103056.0,153678.0,128367.0,Healthcare,51-200 employees
+100160,Netflix,Data Scientist,"New York, NY",Internship,Mid-Senior level,0.0,77709.0,133032.0,105370.5,Financial Services,10000+ employees
+100161,Airbnb,Machine Intelligence Analyst,"San Francisco, CA",Full-time,Mid-Senior level,1.0,114128.0,188689.0,151408.5,E-Commerce,201-500 employees
+100162,Stripe,Data Engineer,"Chicago, IL",Internship,Mid-Senior level,0.0,118557.0,198243.0,158400.0,Technology,201-500 employees
+100163,Amazon,Software Engineer,"Chicago, IL",Full-time,Entry level,0.0,77543.0,100494.0,89018.5,Financial Services,Unknown
+100164,Google,DevOps Engineer,"Remote, US",Part-time,Mid-Senior level,0.0,97418.0,135040.0,116229.0,Technology,1-10 employees
+100165,Google,Data Engineer,"Boston, MA",Full-time,Entry level,0.0,89075.0,167392.0,128233.5,Financial Services,Unknown
+100166,LinkedIn,Data Engineer,"Boston, MA",Full-time,Mid-Senior level,0.0,97755.0,122482.0,110118.5,Financial Services,51-200 employees
+100167,Amazon,Product Manager,"Austin, TX",Part-time,Mid-Senior level,0.0,107968.0,181085.0,144526.5,Entertainment,10000+ employees
+100168,Uber,Software Engineer,"Remote, US",Full-time,Mid-Senior level,0.0,97465.0,155919.0,126692.0,E-Commerce,10000+ employees
+100169,Microsoft,Data Engineer,"Austin, TX",Internship,Mid-Senior level,0.0,90502.0,168896.0,129699.0,E-Commerce,11-50 employees
+100170,Meta,Data Engineer,"Boston, MA",Full-time,Entry level,0.0,76724.0,133193.0,104958.5,Financial Services,1-10 employees
+100171,Google,Software Engineer,"Remote, US",Part-time,Mid-Senior level,0.0,63828.0,119376.0,91602.0,Healthcare,1-10 employees
+100172,Apple,Software Engineer,"Remote, US",Internship,Mid-Senior level,0.0,111120.0,154902.0,133011.0,Healthcare,10000+ employees
+100173,Google,Data Engineer,"Remote, US",Part-time,Mid-Senior level,1.0,77087.0,147827.0,112457.0,Technology,10000+ employees
+100174,Airbnb,Software Engineer,"Boston, MA",Part-time,Director,0.0,72605.0,121059.0,96832.0,Technology,501-1000 employees
+100175,Google,Data Engineer,"Austin, TX",Contract,Entry level,0.0,91337.0,113705.0,102521.0,Entertainment,501-1000 employees
+100176,Google,Data Engineer,"Austin, TX",Contract,Mid-Senior level,0.0,65482.0,101074.0,83278.0,Financial Services,501-1000 employees
+100177,Microsoft,Product Manager,"Remote, US",Part-time,Mid-Senior level,0.0,87005.0,129178.0,108091.5,Technology,1-10 employees
+100178,Microsoft,Data Scientist,"New York, NY",Part-time,Mid-Senior level,0.0,82760.0,135964.0,109362.0,Technology,11-50 employees
+100179,Netflix,Data Engineer,"Seattle, WA",Part-time,Entry level,1.0,110952.0,166548.0,138750.0,Automotive,201-500 employees
+100180,Uber,Machine Intelligence Analyst,"Boston, MA",Contract,Entry level,0.0,65463.0,119787.0,92625.0,Financial Services,501-1000 employees
+100181,Apple,DevOps Engineer,"Seattle, WA",Contract,Director,0.0,106628.0,183350.0,144989.0,Entertainment,11-50 employees
+100182,Google,Frontend Developer,"Seattle, WA",Full-time,Mid-Senior level,1.0,64912.0,131044.0,97978.0,Technology,Unknown
+100183,Google,Data Scientist,"Austin, TX",Full-time,Mid-Senior level,0.0,64648.0,108512.0,86580.0,Entertainment,51-200 employees
+100184,Meta,Data Scientist,"Austin, TX",Part-time,Mid-Senior level,0.0,93623.0,172271.0,132947.0,E-Commerce,501-1000 employees
+100185,Microsoft,Data Scientist,"New York, NY",Internship,Mid-Senior level,0.0,119156.0,186985.0,153070.5,Entertainment,Unknown
+100186,Apple,Product Manager,"Seattle, WA",Internship,Entry level,0.0,95634.0,146384.0,121009.0,Healthcare,201-500 employees
+100187,LinkedIn,Data Engineer,"Seattle, WA",Contract,Mid-Senior level,0.0,104602.0,135178.0,119890.0,Healthcare,51-200 employees
+100188,Netflix,Product Manager,"Remote, US",Contract,Mid-Senior level,0.0,109062.0,145628.0,127345.0,Entertainment,51-200 employees
+100189,Uber,Data Engineer,"Austin, TX",Contract,Director,0.0,109334.0,136524.0,122929.0,Healthcare,201-500 employees
+100190,Amazon,Product Manager,"Seattle, WA",Part-time,Mid-Senior level,0.0,63112.0,106183.0,84647.5,E-Commerce,501-1000 employees
+100191,Uber,Product Manager,"Chicago, IL",Internship,Mid-Senior level,0.0,82054.0,140387.0,111220.5,Financial Services,1-10 employees
+100192,Airbnb,DevOps Engineer,"New York, NY",Full-time,Mid-Senior level,0.0,64492.0,140885.0,102688.5,Healthcare,201-500 employees
+100193,Google,Machine Intelligence Analyst,"Chicago, IL",Part-time,Mid-Senior level,0.0,82207.0,117576.0,99891.5,Healthcare,201-500 employees
+100194,Netflix,Product Manager,"Chicago, IL",Full-time,Mid-Senior level,0.0,75114.0,119149.0,97131.5,Entertainment,201-500 employees
+100195,Airbnb,DevOps Engineer,"Boston, MA",Full-time,Mid-Senior level,0.0,94285.0,169012.0,131648.5,E-Commerce,51-200 employees
+100196,Apple,Software Engineer,"Boston, MA",Part-time,Associate,0.0,76018.0,97607.0,86812.5,Financial Services,11-50 employees
+100197,Amazon,Machine Intelligence Analyst,"New York, NY",Full-time,Associate,0.0,81386.0,160317.0,120851.5,Entertainment,Unknown
+100198,Microsoft,Product Manager,"Chicago, IL",Internship,Mid-Senior level,0.0,77740.0,122975.0,100357.5,Entertainment,1-10 employees
+100199,Netflix,Frontend Developer,"Seattle, WA",Full-time,Director,0.0,119518.0,139677.0,129597.5,Automotive,501-1000 employees
+100200,Netflix,Data Scientist,"Austin, TX",Internship,Mid-Senior level,0.0,112781.0,144926.0,128853.5,E-Commerce,501-1000 employees
+100201,Google,Software Engineer,"New York, NY",Internship,Mid-Senior level,0.0,112780.0,148153.0,130466.5,Financial Services,Unknown
+100202,Stripe,Software Engineer,"Remote, US",Internship,Entry level,0.0,104199.0,156120.0,130159.5,E-Commerce,11-50 employees
+100203,Netflix,DevOps Engineer,"Chicago, IL",Contract,Executive,0.0,68210.0,127533.0,97871.5,Financial Services,201-500 employees
+100204,Meta,Software Engineer,"New York, NY",Full-time,Entry level,0.0,104363.0,140600.0,122481.5,E-Commerce,1-10 employees
+100205,Amazon,Machine Intelligence Analyst,"San Francisco, CA",Part-time,Entry level,0.0,105639.0,167610.0,136624.5,Entertainment,501-1000 employees
+100206,Amazon,Product Manager,"San Francisco, CA",Part-time,Entry level,0.0,72743.0,100987.0,86865.0,Entertainment,Unknown
+100207,Meta,Product Manager,"Boston, MA",Full-time,Mid-Senior level,0.0,115284.0,150027.0,132655.5,Technology,10000+ employees
+100208,LinkedIn,Frontend Developer,"Austin, TX",Contract,Entry level,0.0,102092.0,153658.0,127875.0,Healthcare,Unknown
+100209,Meta,Data Scientist,"Seattle, WA",Contract,Entry level,0.0,104299.0,170400.0,137349.5,Automotive,501-1000 employees
+100210,Meta,DevOps Engineer,"Austin, TX",Internship,Entry level,0.0,66588.0,132697.0,99642.5,E-Commerce,201-500 employees
+100211,Amazon,Data Scientist,"Austin, TX",Full-time,Entry level,0.0,63311.0,139309.0,101310.0,Automotive,10000+ employees
+100212,Uber,Software Engineer,"Austin, TX",Full-time,Mid-Senior level,0.0,82432.0,121123.0,101777.5,Technology,11-50 employees
+100213,Amazon,Frontend Developer,"Austin, TX",Part-time,Mid-Senior level,0.0,115398.0,169394.0,142396.0,Healthcare,1-10 employees
+100214,Stripe,Data Scientist,"Remote, US",Full-time,Mid-Senior level,0.0,93755.0,170133.0,131944.0,E-Commerce,11-50 employees
+100215,Google,Machine Intelligence Analyst,"Remote, US",Contract,Mid-Senior level,0.0,63321.0,88911.0,76116.0,Financial Services,11-50 employees
+100216,Airbnb,Product Manager,"Boston, MA",Full-time,Mid-Senior level,0.0,75812.0,151883.0,113847.5,Healthcare,Unknown
+100217,Uber,Software Engineer,"New York, NY",Part-time,Entry level,1.0,97383.0,122968.0,110175.5,Entertainment,1-10 employees
+100218,Microsoft,Frontend Developer,"San Francisco, CA",Internship,Mid-Senior level,0.0,108280.0,137507.0,122893.5,Technology,1-10 employees
+100219,Airbnb,Data Scientist,"Austin, TX",Part-time,Executive,0.0,73146.0,121424.0,97285.0,Healthcare,501-1000 employees
+100220,Google,DevOps Engineer,"Boston, MA",Part-time,Mid-Senior level,0.0,117517.0,176331.0,146924.0,Healthcare,501-1000 employees
+100221,Stripe,Machine Intelligence Analyst,"New York, NY",Internship,Mid-Senior level,0.0,73654.0,105891.0,89772.5,Entertainment,1-10 employees
+100222,Stripe,Machine Intelligence Analyst,"San Francisco, CA",Part-time,Mid-Senior level,0.0,112893.0,148542.0,130717.5,E-Commerce,10000+ employees
+100223,Microsoft,Data Scientist,"Chicago, IL",Part-time,Mid-Senior level,0.0,95820.0,153533.0,124676.5,Financial Services,51-200 employees
+100224,Uber,Product Manager,"Seattle, WA",Full-time,Mid-Senior level,0.0,115726.0,143653.0,129689.5,Entertainment,501-1000 employees
+100225,LinkedIn,Data Scientist,"Remote, US",Full-time,Entry level,0.0,60726.0,126135.0,93430.5,Financial Services,51-200 employees
+100226,Meta,Software Engineer,"Chicago, IL",Internship,Entry level,0.0,63760.0,132526.0,98143.0,E-Commerce,Unknown
+100227,Uber,Data Scientist,"San Francisco, CA",Full-time,Entry level,0.0,82190.0,148344.0,115267.0,Healthcare,10000+ employees
+100228,LinkedIn,Machine Intelligence Analyst,"Chicago, IL",Full-time,Director,0.0,61875.0,88891.0,75383.0,Financial Services,1-10 employees
+100229,Stripe,Frontend Developer,"Seattle, WA",Part-time,Associate,0.0,83377.0,117404.0,100390.5,Technology,10000+ employees
+100230,Amazon,Data Scientist,"Boston, MA",Contract,Entry level,0.0,106737.0,175425.0,141081.0,Technology,501-1000 employees
+100231,Google,Product Manager,"San Francisco, CA",Full-time,Entry level,0.0,64033.0,108175.0,86104.0,Entertainment,11-50 employees
+100232,Microsoft,Frontend Developer,"Chicago, IL",Contract,Associate,0.0,98211.0,164731.0,131471.0,E-Commerce,Unknown
+100233,Google,DevOps Engineer,"Remote, US",Full-time,Entry level,1.0,77373.0,151611.0,114492.0,Entertainment,1-10 employees
+100234,Apple,Data Engineer,"Remote, US",Full-time,Entry level,0.0,63744.0,142352.0,103048.0,Entertainment,201-500 employees
+100235,Apple,Data Scientist,"New York, NY",Internship,Executive,0.0,84995.0,128540.0,106767.5,Automotive,Unknown
+100236,Uber,Product Manager,"Chicago, IL",Internship,Mid-Senior level,0.0,76977.0,148013.0,112495.0,Entertainment,51-200 employees
+100237,Stripe,Frontend Developer,"Austin, TX",Internship,Mid-Senior level,0.0,92402.0,144299.0,118350.5,Automotive,10000+ employees
+100238,Stripe,Product Manager,"Chicago, IL",Contract,Executive,0.0,94542.0,165503.0,130022.5,Technology,1-10 employees
+100239,Meta,DevOps Engineer,"Boston, MA",Part-time,Mid-Senior level,0.0,70651.0,93818.0,82234.5,Technology,Unknown
+100240,Meta,Machine Intelligence Analyst,"San Francisco, CA",Full-time,Entry level,0.0,93703.0,158460.0,126081.5,Entertainment,10000+ employees
+100241,Meta,Product Manager,"San Francisco, CA",Full-time,Entry level,0.0,73395.0,120312.0,96853.5,Technology,1-10 employees
+100242,Amazon,Frontend Developer,"Boston, MA",Full-time,Associate,0.0,89808.0,132544.0,111176.0,E-Commerce,501-1000 employees
+100243,Airbnb,Product Manager,"Chicago, IL",Contract,Director,0.0,96576.0,144566.0,120571.0,Automotive,Unknown
+100244,Netflix,Product Manager,"Boston, MA",Internship,Associate,0.0,76715.0,154876.0,115795.5,Automotive,501-1000 employees
+100245,Airbnb,Product Manager,"Seattle, WA",Part-time,Entry level,0.0,104409.0,138496.0,121452.5,Entertainment,Unknown
+100246,Google,Software Engineer,"Boston, MA",Contract,Associate,0.0,84306.0,126746.0,105526.0,Technology,501-1000 employees
+100247,Airbnb,Software Engineer,"Remote, US",Internship,Director,0.0,79086.0,134291.0,106688.5,Financial Services,10000+ employees
+100248,Amazon,Machine Intelligence Analyst,"Boston, MA",Contract,Mid-Senior level,0.0,74376.0,149996.0,112186.0,Automotive,201-500 employees
+100249,Google,Data Scientist,"San Francisco, CA",Part-time,Director,0.0,65889.0,101164.0,83526.5,Entertainment,Unknown
+100250,Airbnb,Product Manager,"Remote, US",Internship,Associate,0.0,97822.0,176054.0,136938.0,Entertainment,Unknown
+100251,Amazon,DevOps Engineer,"San Francisco, CA",Contract,Mid-Senior level,0.0,96636.0,171739.0,134187.5,E-Commerce,501-1000 employees
+100252,Netflix,Data Scientist,"New York, NY",Part-time,Mid-Senior level,1.0,80584.0,105860.0,93222.0,Healthcare,1-10 employees
+100253,Airbnb,DevOps Engineer,"Austin, TX",Full-time,Mid-Senior level,0.0,109353.0,170980.0,140166.5,Healthcare,Unknown
+100254,Amazon,Data Scientist,"San Francisco, CA",Part-time,Entry level,0.0,111649.0,172235.0,141942.0,Automotive,501-1000 employees
+100255,Meta,Machine Intelligence Analyst,"Remote, US",Full-time,Mid-Senior level,1.0,94610.0,152106.0,123358.0,E-Commerce,11-50 employees
+100256,Stripe,Product Manager,"New York, NY",Contract,Mid-Senior level,0.0,70058.0,109066.0,89562.0,E-Commerce,501-1000 employees
+100257,Meta,Product Manager,"San Francisco, CA",Internship,Director,0.0,119340.0,145078.0,132209.0,E-Commerce,10000+ employees
+100258,Stripe,Data Engineer,"Seattle, WA",Internship,Executive,1.0,69101.0,121503.0,95302.0,Automotive,201-500 employees
+100259,Microsoft,DevOps Engineer,"Boston, MA",Contract,Associate,0.0,72497.0,145881.0,109189.0,Healthcare,11-50 employees
+100260,Microsoft,Data Scientist,"Austin, TX",Internship,Entry level,0.0,64658.0,90451.0,77554.5,E-Commerce,10000+ employees
+100261,Microsoft,Data Scientist,"San Francisco, CA",Internship,Mid-Senior level,0.0,71381.0,128672.0,100026.5,Technology,10000+ employees
+100262,Netflix,Software Engineer,"New York, NY",Full-time,Entry level,0.0,100312.0,125883.0,113097.5,Entertainment,10000+ employees
+100263,Meta,Data Engineer,"Seattle, WA",Contract,Mid-Senior level,0.0,100486.0,151817.0,126151.5,Entertainment,1-10 employees
+100264,Stripe,Frontend Developer,"Chicago, IL",Part-time,Associate,1.0,106619.0,142828.0,124723.5,Financial Services,10000+ employees
+100265,Amazon,Frontend Developer,"New York, NY",Full-time,Director,0.0,77154.0,145168.0,111161.0,Financial Services,1-10 employees
+100266,Google,Software Engineer,"Boston, MA",Contract,Mid-Senior level,0.0,79539.0,124933.0,102236.0,Automotive,10000+ employees
+100267,Amazon,Software Engineer,"New York, NY",Full-time,Director,0.0,119845.0,182993.0,151419.0,Automotive,51-200 employees
+100268,Google,Software Engineer,"Seattle, WA",Part-time,Director,0.0,71777.0,117459.0,94618.0,Entertainment,11-50 employees
+100269,Apple,DevOps Engineer,"New York, NY",Part-time,Mid-Senior level,0.0,94396.0,116620.0,105508.0,Technology,51-200 employees
+100270,Amazon,DevOps Engineer,"Seattle, WA",Contract,Director,0.0,90373.0,151530.0,120951.5,Healthcare,10000+ employees
+100271,Airbnb,Machine Intelligence Analyst,"San Francisco, CA",Part-time,Mid-Senior level,0.0,93154.0,161849.0,127501.5,Healthcare,11-50 employees
+100272,Airbnb,Machine Intelligence Analyst,"Seattle, WA",Full-time,Mid-Senior level,0.0,66031.0,141274.0,103652.5,Automotive,11-50 employees
+100273,Uber,Software Engineer,"Seattle, WA",Part-time,Mid-Senior level,1.0,87997.0,152449.0,120223.0,Technology,Unknown
+100274,Meta,Data Engineer,"Austin, TX",Full-time,Mid-Senior level,0.0,66439.0,129847.0,98143.0,Automotive,201-500 employees
+100275,Google,Data Scientist,"Seattle, WA",Full-time,Mid-Senior level,0.0,82785.0,135226.0,109005.5,Healthcare,51-200 employees
+100276,Google,DevOps Engineer,"Seattle, WA",Part-time,Mid-Senior level,0.0,73392.0,134822.0,104107.0,Automotive,201-500 employees
+100277,Meta,Data Engineer,"Chicago, IL",Contract,Mid-Senior level,1.0,113160.0,172289.0,142724.5,E-Commerce,11-50 employees
+100278,Netflix,Product Manager,"San Francisco, CA",Internship,Mid-Senior level,1.0,88669.0,143385.0,116027.0,Automotive,1-10 employees
+100279,Uber,DevOps Engineer,"Boston, MA",Part-time,Mid-Senior level,0.0,88939.0,153798.0,121368.5,Entertainment,11-50 employees
+100280,Netflix,DevOps Engineer,"Austin, TX",Full-time,Mid-Senior level,0.0,111618.0,158204.0,134911.0,Automotive,201-500 employees
+100281,Netflix,Machine Intelligence Analyst,"Chicago, IL",Full-time,Mid-Senior level,0.0,62282.0,127042.0,94662.0,Entertainment,51-200 employees
+100282,Netflix,Data Scientist,"Remote, US",Part-time,Mid-Senior level,0.0,94624.0,138102.0,116363.0,Technology,10000+ employees
+100283,Meta,Data Scientist,"San Francisco, CA",Contract,Entry level,0.0,108438.0,134756.0,121597.0,Healthcare,Unknown
+100284,Netflix,Frontend Developer,"San Francisco, CA",Contract,Mid-Senior level,0.0,84364.0,133058.0,108711.0,Financial Services,Unknown
+100285,Airbnb,Frontend Developer,"Remote, US",Full-time,Entry level,1.0,61998.0,102178.0,82088.0,Financial Services,Unknown
+100286,Microsoft,Frontend Developer,"Boston, MA",Full-time,Mid-Senior level,0.0,91705.0,123885.0,107795.0,Healthcare,10000+ employees
+100287,Apple,Frontend Developer,"Seattle, WA",Contract,Associate,0.0,98244.0,151246.0,124745.0,Financial Services,Unknown
+100288,Google,Product Manager,"Chicago, IL",Internship,Mid-Senior level,0.0,69428.0,104800.0,87114.0,Automotive,51-200 employees
+100289,Google,Product Manager,"New York, NY",Part-time,Mid-Senior level,0.0,97437.0,147233.0,122335.0,Technology,10000+ employees
+100290,Apple,DevOps Engineer,"Austin, TX",Full-time,Executive,0.0,72336.0,150608.0,111472.0,Technology,Unknown
+100291,Meta,Software Engineer,"New York, NY",Full-time,Associate,0.0,69342.0,142101.0,105721.5,Healthcare,10000+ employees
+100292,Amazon,Machine Intelligence Analyst,"Remote, US",Contract,Director,0.0,113470.0,157897.0,135683.5,Financial Services,201-500 employees
+100293,Meta,Machine Intelligence Analyst,"San Francisco, CA",Part-time,Associate,0.0,99832.0,153122.0,126477.0,Automotive,51-200 employees
+100294,Google,Frontend Developer,"Boston, MA",Contract,Entry level,1.0,67446.0,142502.0,104974.0,Technology,501-1000 employees
+100295,Google,DevOps Engineer,"San Francisco, CA",Part-time,Entry level,0.0,110583.0,158682.0,134632.5,Technology,1-10 employees
+100296,Apple,Data Engineer,"Austin, TX",Part-time,Mid-Senior level,0.0,98392.0,163878.0,131135.0,E-Commerce,Unknown
+100297,Netflix,Software Engineer,"San Francisco, CA",Part-time,Entry level,0.0,67461.0,141501.0,104481.0,E-Commerce,1-10 employees
+100298,Meta,DevOps Engineer,"San Francisco, CA",Full-time,Mid-Senior level,0.0,94587.0,124408.0,109497.5,Technology,10000+ employees
+100299,Stripe,Software Engineer,"Austin, TX",Internship,Mid-Senior level,0.0,70516.0,96348.0,83432.0,Healthcare,1-10 employees
+100300,Apple,Software Engineer,"Chicago, IL",Contract,Mid-Senior level,0.0,73749.0,106569.0,90159.0,Entertainment,51-200 employees
+100301,Airbnb,Software Engineer,"Chicago, IL",Internship,Associate,0.0,77514.0,113725.0,95619.5,Entertainment,51-200 employees
+100302,Google,DevOps Engineer,"Austin, TX",Contract,Associate,0.0,115715.0,175605.0,145660.0,Automotive,11-50 employees
+100303,Apple,Frontend Developer,"Boston, MA",Part-time,Mid-Senior level,0.0,95426.0,121268.0,108347.0,Technology,Unknown
+100304,Meta,Machine Intelligence Analyst,"Remote, US",Full-time,Associate,0.0,96268.0,117584.0,106926.0,Technology,11-50 employees
+100305,Google,Machine Intelligence Analyst,"San Francisco, CA",Internship,Mid-Senior level,0.0,84950.0,150918.0,117934.0,Technology,1-10 employees
+100306,Amazon,Frontend Developer,"Boston, MA",Full-time,Director,0.0,94888.0,132396.0,113642.0,Healthcare,501-1000 employees
+100307,Apple,Software Engineer,"San Francisco, CA",Contract,Entry level,0.0,96788.0,138793.0,117790.5,E-Commerce,11-50 employees
+100308,Uber,Data Engineer,"Remote, US",Full-time,Executive,0.0,70213.0,144788.0,107500.5,Technology,11-50 employees
+100309,Google,Data Scientist,"Chicago, IL",Full-time,Mid-Senior level,0.0,96027.0,131233.0,113630.0,Technology,51-200 employees
+100310,Meta,DevOps Engineer,"Boston, MA",Internship,Mid-Senior level,0.0,88011.0,126982.0,107496.5,Financial Services,501-1000 employees
+100311,Microsoft,Data Scientist,"Seattle, WA",Part-time,Entry level,0.0,102849.0,148448.0,125648.5,Healthcare,10000+ employees
+100312,Stripe,Frontend Developer,"Seattle, WA",Full-time,Mid-Senior level,1.0,94591.0,136647.0,115619.0,Automotive,1-10 employees
+100313,LinkedIn,Data Engineer,"Seattle, WA",Part-time,Entry level,0.0,77858.0,99236.0,88547.0,Technology,11-50 employees
+100314,Netflix,DevOps Engineer,"Chicago, IL",Contract,Entry level,0.0,78626.0,151152.0,114889.0,Financial Services,501-1000 employees
+100315,LinkedIn,Frontend Developer,"Chicago, IL",Full-time,Mid-Senior level,0.0,73467.0,94986.0,84226.5,Entertainment,Unknown
+100316,Meta,Software Engineer,"Remote, US",Internship,Mid-Senior level,0.0,112395.0,154556.0,133475.5,Automotive,501-1000 employees
+100317,Airbnb,Machine Intelligence Analyst,"San Francisco, CA",Contract,Mid-Senior level,0.0,99758.0,160461.0,130109.5,Technology,1-10 employees
+100318,Airbnb,Data Scientist,"Remote, US",Contract,Director,1.0,114312.0,173173.0,143742.5,Technology,501-1000 employees
+100319,Microsoft,Product Manager,"Remote, US",Internship,Mid-Senior level,0.0,63134.0,140704.0,101919.0,Financial Services,501-1000 employees
+100320,Netflix,Product Manager,"Chicago, IL",Full-time,Mid-Senior level,0.0,111222.0,136577.0,123899.5,Healthcare,501-1000 employees
+100321,Uber,Data Engineer,"Seattle, WA",Full-time,Entry level,0.0,76743.0,150863.0,113803.0,Technology,Unknown
+100322,Microsoft,Software Engineer,"New York, NY",Contract,Associate,0.0,75434.0,104517.0,89975.5,Entertainment,11-50 employees
+100323,LinkedIn,Data Scientist,"San Francisco, CA",Full-time,Mid-Senior level,0.0,107775.0,166117.0,136946.0,Technology,1-10 employees
+100324,Microsoft,Software Engineer,"Chicago, IL",Part-time,Executive,1.0,70233.0,110689.0,90461.0,Entertainment,Unknown
+100325,LinkedIn,Data Scientist,"Seattle, WA",Internship,Associate,1.0,109146.0,142470.0,125808.0,Automotive,501-1000 employees
+100326,Google,Data Engineer,"Boston, MA",Part-time,Mid-Senior level,0.0,61141.0,83398.0,72269.5,Automotive,501-1000 employees
+100327,Airbnb,Data Engineer,"New York, NY",Full-time,Entry level,0.0,78019.0,125383.0,101701.0,E-Commerce,11-50 employees
+100328,Google,Product Manager,"New York, NY",Contract,Director,0.0,80384.0,125356.0,102870.0,E-Commerce,1-10 employees
+100329,Stripe,Software Engineer,"Chicago, IL",Internship,Associate,0.0,102903.0,169082.0,135992.5,Entertainment,51-200 employees
+100330,Netflix,DevOps Engineer,"Austin, TX",Full-time,Entry level,0.0,105734.0,152388.0,129061.0,Healthcare,Unknown
+100331,Uber,Product Manager,"San Francisco, CA",Full-time,Mid-Senior level,0.0,96129.0,131362.0,113745.5,Technology,11-50 employees
+100332,LinkedIn,Software Engineer,"New York, NY",Contract,Associate,0.0,82967.0,118854.0,100910.5,Technology,1-10 employees
+100333,Uber,Product Manager,"Chicago, IL",Contract,Entry level,1.0,100603.0,149923.0,125263.0,E-Commerce,Unknown
+100334,LinkedIn,DevOps Engineer,"Chicago, IL",Part-time,Director,0.0,71172.0,111980.0,91576.0,Entertainment,501-1000 employees
+100335,Meta,Machine Intelligence Analyst,"Seattle, WA",Internship,Mid-Senior level,0.0,76390.0,148779.0,112584.5,Technology,1-10 employees
+100336,Microsoft,Machine Intelligence Analyst,"Boston, MA",Internship,Entry level,0.0,63267.0,113421.0,88344.0,Technology,1-10 employees
+100337,Stripe,Machine Intelligence Analyst,"Austin, TX",Contract,Associate,0.0,99332.0,172377.0,135854.5,Healthcare,10000+ employees
+100338,Airbnb,Machine Intelligence Analyst,"San Francisco, CA",Part-time,Mid-Senior level,0.0,86167.0,140940.0,113553.5,Financial Services,1-10 employees
+100339,LinkedIn,Frontend Developer,"Remote, US",Internship,Mid-Senior level,0.0,81312.0,152480.0,116896.0,E-Commerce,51-200 employees
+100340,Uber,Data Scientist,"Boston, MA",Contract,Entry level,0.0,87840.0,135587.0,111713.5,E-Commerce,1-10 employees
+100341,Stripe,Frontend Developer,"Boston, MA",Full-time,Entry level,0.0,78990.0,109850.0,94420.0,Financial Services,51-200 employees
+100342,Amazon,Frontend Developer,"Seattle, WA",Internship,Mid-Senior level,0.0,104179.0,167017.0,135598.0,Technology,501-1000 employees
+100343,Amazon,Frontend Developer,"New York, NY",Part-time,Mid-Senior level,0.0,65906.0,128062.0,96984.0,Healthcare,51-200 employees
+100344,Google,Machine Intelligence Analyst,"New York, NY",Part-time,Mid-Senior level,0.0,108796.0,146952.0,127874.0,Healthcare,Unknown
+100345,Airbnb,DevOps Engineer,"Seattle, WA",Part-time,Associate,0.0,112425.0,189930.0,151177.5,E-Commerce,501-1000 employees
+100346,Meta,Data Engineer,"Chicago, IL",Full-time,Mid-Senior level,0.0,100379.0,140739.0,120559.0,Healthcare,501-1000 employees
+100347,Uber,Data Engineer,"New York, NY",Internship,Entry level,0.0,77297.0,115432.0,96364.5,Automotive,51-200 employees
+100348,Microsoft,Data Scientist,"Austin, TX",Internship,Mid-Senior level,0.0,62011.0,107362.0,84686.5,Financial Services,11-50 employees
+100349,Microsoft,Machine Intelligence Analyst,"San Francisco, CA",Full-time,Director,0.0,110594.0,187176.0,148885.0,Technology,201-500 employees
+100350,Uber,Machine Intelligence Analyst,"Boston, MA",Internship,Associate,0.0,114698.0,165197.0,139947.5,Automotive,1-10 employees
+100351,Netflix,Machine Intelligence Analyst,"Boston, MA",Full-time,Mid-Senior level,0.0,104014.0,171391.0,137702.5,Financial Services,10000+ employees
+100352,Meta,Product Manager,"Austin, TX",Full-time,Mid-Senior level,0.0,106558.0,150112.0,128335.0,Entertainment,201-500 employees
+100353,Stripe,Software Engineer,"New York, NY",Full-time,Mid-Senior level,0.0,71738.0,147359.0,109548.5,E-Commerce,1-10 employees
+100354,LinkedIn,Product Manager,"Boston, MA",Part-time,Associate,1.0,88797.0,157928.0,123362.5,Healthcare,1-10 employees
+100355,Netflix,Software Engineer,"Remote, US",Internship,Director,0.0,107498.0,185781.0,146639.5,Entertainment,501-1000 employees
+100356,LinkedIn,Machine Intelligence Analyst,"San Francisco, CA",Full-time,Mid-Senior level,0.0,71120.0,110724.0,90922.0,Healthcare,1-10 employees
+100357,LinkedIn,Machine Intelligence Analyst,"San Francisco, CA",Internship,Associate,0.0,110981.0,147904.0,129442.5,Automotive,10000+ employees
+100358,Netflix,Product Manager,"Boston, MA",Part-time,Associate,1.0,68767.0,136358.0,102562.5,Technology,1-10 employees
+100359,Google,Product Manager,"Seattle, WA",Full-time,Entry level,0.0,82852.0,153465.0,118158.5,Technology,51-200 employees
+100360,Amazon,Software Engineer,"Boston, MA",Contract,Mid-Senior level,0.0,73703.0,148039.0,110871.0,Technology,201-500 employees
+100361,LinkedIn,Data Engineer,"Seattle, WA",Part-time,Entry level,0.0,60929.0,89476.0,75202.5,Healthcare,51-200 employees
+100362,Netflix,Software Engineer,"Boston, MA",Contract,Entry level,0.0,71951.0,136234.0,104092.5,Entertainment,10000+ employees
+100363,Netflix,Product Manager,"Remote, US",Internship,Director,0.0,112851.0,165853.0,139352.0,Technology,1-10 employees
+100364,Apple,DevOps Engineer,"Chicago, IL",Internship,Mid-Senior level,0.0,86039.0,120601.0,103320.0,Entertainment,Unknown
+100365,Google,Product Manager,"San Francisco, CA",Part-time,Mid-Senior level,0.0,108613.0,179313.0,143963.0,Healthcare,10000+ employees
+100366,Airbnb,DevOps Engineer,"Boston, MA",Internship,Entry level,0.0,89504.0,116984.0,103244.0,Automotive,501-1000 employees
+100367,Apple,Data Scientist,"Remote, US",Contract,Mid-Senior level,1.0,77438.0,124110.0,100774.0,Entertainment,51-200 employees
+100368,Apple,Product Manager,"Seattle, WA",Full-time,Entry level,0.0,108515.0,132728.0,120621.5,Automotive,51-200 employees
+100369,Uber,Data Scientist,"Seattle, WA",Full-time,Entry level,0.0,65744.0,96037.0,80890.5,Healthcare,11-50 employees
+100370,Amazon,Data Engineer,"San Francisco, CA",Full-time,Mid-Senior level,0.0,78284.0,132725.0,105504.5,Healthcare,1-10 employees
+100371,Netflix,Software Engineer,"Austin, TX",Part-time,Mid-Senior level,0.0,102417.0,178277.0,140347.0,E-Commerce,501-1000 employees
+100372,Amazon,DevOps Engineer,"Boston, MA",Internship,Mid-Senior level,0.0,99748.0,176882.0,138315.0,Healthcare,Unknown
+100373,Meta,Software Engineer,"New York, NY",Contract,Entry level,0.0,67069.0,89169.0,78119.0,Healthcare,51-200 employees
+100374,Uber,Data Scientist,"Seattle, WA",Internship,Entry level,0.0,102359.0,166976.0,134667.5,Financial Services,51-200 employees
+100375,Airbnb,DevOps Engineer,"Chicago, IL",Internship,Mid-Senior level,0.0,79799.0,127971.0,103885.0,Technology,501-1000 employees
+100376,Amazon,Software Engineer,"Chicago, IL",Internship,Mid-Senior level,0.0,93210.0,133342.0,113276.0,E-Commerce,10000+ employees
+100377,Microsoft,Product Manager,"Seattle, WA",Full-time,Mid-Senior level,0.0,88226.0,160551.0,124388.5,E-Commerce,10000+ employees
+100378,LinkedIn,Machine Intelligence Analyst,"Austin, TX",Contract,Mid-Senior level,0.0,115370.0,153569.0,134469.5,E-Commerce,1-10 employees
+100379,Meta,Data Scientist,"Austin, TX",Contract,Mid-Senior level,0.0,64652.0,121261.0,92956.5,Financial Services,11-50 employees
+100380,Google,Software Engineer,"Remote, US",Internship,Associate,0.0,84323.0,147288.0,115805.5,Automotive,51-200 employees
+100381,Airbnb,Data Scientist,"Chicago, IL",Full-time,Entry level,0.0,116985.0,145001.0,130993.0,Healthcare,11-50 employees
+100382,Meta,Frontend Developer,"Remote, US",Full-time,Mid-Senior level,0.0,102138.0,161917.0,132027.5,Technology,10000+ employees
+100383,LinkedIn,Data Scientist,"Chicago, IL",Contract,Associate,0.0,67597.0,124858.0,96227.5,Entertainment,10000+ employees
+100384,Uber,DevOps Engineer,"Boston, MA",Full-time,Mid-Senior level,0.0,107093.0,158974.0,133033.5,Automotive,201-500 employees
+100385,LinkedIn,Frontend Developer,"Boston, MA",Full-time,Mid-Senior level,0.0,97226.0,134284.0,115755.0,Healthcare,Unknown
+100386,Apple,DevOps Engineer,"New York, NY",Full-time,Director,0.0,66591.0,111063.0,88827.0,Financial Services,1-10 employees
+100387,LinkedIn,Machine Intelligence Analyst,"Boston, MA",Part-time,Associate,0.0,109114.0,170460.0,139787.0,Healthcare,201-500 employees
+100388,Apple,Frontend Developer,"New York, NY",Internship,Mid-Senior level,0.0,85833.0,140759.0,113296.0,Healthcare,Unknown
+100389,Uber,Product Manager,"Boston, MA",Contract,Mid-Senior level,0.0,71826.0,143639.0,107732.5,Financial Services,201-500 employees
+100390,Stripe,Data Scientist,"San Francisco, CA",Contract,Mid-Senior level,0.0,86417.0,141249.0,113833.0,E-Commerce,201-500 employees
+100391,Apple,Software Engineer,"Boston, MA",Part-time,Mid-Senior level,1.0,78693.0,134714.0,106703.5,E-Commerce,1-10 employees
+100392,Google,Data Engineer,"Remote, US",Internship,Mid-Senior level,0.0,74138.0,148269.0,111203.5,Technology,1-10 employees
+100393,LinkedIn,Data Scientist,"Seattle, WA",Contract,Mid-Senior level,0.0,115420.0,159507.0,137463.5,Technology,501-1000 employees
+100394,LinkedIn,Data Scientist,"Remote, US",Full-time,Mid-Senior level,0.0,110062.0,142890.0,126476.0,E-Commerce,11-50 employees
+100395,Google,Machine Intelligence Analyst,"Seattle, WA",Contract,Mid-Senior level,0.0,113492.0,164620.0,139056.0,Automotive,11-50 employees
+100396,Microsoft,Product Manager,"Austin, TX",Full-time,Associate,0.0,113161.0,191244.0,152202.5,Entertainment,501-1000 employees
+100397,Netflix,Data Engineer,"Remote, US",Part-time,Mid-Senior level,0.0,115780.0,137181.0,126480.5,Healthcare,501-1000 employees
+100398,Stripe,Frontend Developer,"Austin, TX",Full-time,Entry level,1.0,62169.0,101812.0,81990.5,Entertainment,10000+ employees
+100399,Airbnb,Frontend Developer,"New York, NY",Contract,Mid-Senior level,0.0,78556.0,113749.0,96152.5,Healthcare,Unknown
+100400,Apple,Frontend Developer,"New York, NY",Contract,Mid-Senior level,0.0,82052.0,128905.0,105478.5,E-Commerce,201-500 employees
+100401,Google,DevOps Engineer,"San Francisco, CA",Contract,Mid-Senior level,0.0,66313.0,131177.0,98745.0,Technology,501-1000 employees
+100402,Uber,DevOps Engineer,"Boston, MA",Part-time,Mid-Senior level,0.0,68315.0,108622.0,88468.5,Automotive,51-200 employees
+100403,Apple,Software Engineer,"Remote, US",Part-time,Entry level,0.0,68036.0,125018.0,96527.0,Technology,11-50 employees
+100404,Netflix,Data Engineer,"Austin, TX",Internship,Mid-Senior level,0.0,91778.0,131389.0,111583.5,Entertainment,501-1000 employees
+100405,Uber,Frontend Developer,"Seattle, WA",Contract,Entry level,0.0,87734.0,151525.0,119629.5,Technology,51-200 employees
+100406,Meta,DevOps Engineer,"New York, NY",Full-time,Entry level,0.0,83173.0,115123.0,99148.0,E-Commerce,51-200 employees
+100407,LinkedIn,Software Engineer,"Boston, MA",Part-time,Mid-Senior level,0.0,90403.0,121107.0,105755.0,Automotive,51-200 employees
+100408,Meta,Product Manager,"New York, NY",Contract,Mid-Senior level,1.0,60785.0,123896.0,92340.5,Entertainment,10000+ employees
+100409,Apple,Software Engineer,"Seattle, WA",Contract,Executive,0.0,66139.0,98006.0,82072.5,Automotive,10000+ employees
+100410,Netflix,DevOps Engineer,"Boston, MA",Part-time,Mid-Senior level,0.0,66344.0,89089.0,77716.5,Healthcare,51-200 employees
+100411,Stripe,Machine Intelligence Analyst,"Boston, MA",Internship,Mid-Senior level,0.0,78800.0,154043.0,116421.5,Technology,Unknown
+100412,Apple,Machine Intelligence Analyst,"Austin, TX",Part-time,Mid-Senior level,0.0,85372.0,109238.0,97305.0,Automotive,10000+ employees
+100413,Google,Frontend Developer,"Austin, TX",Part-time,Entry level,1.0,80538.0,132783.0,106660.5,Financial Services,201-500 employees
+100414,Amazon,Machine Intelligence Analyst,"Remote, US",Full-time,Executive,0.0,74973.0,139697.0,107335.0,Technology,51-200 employees
+100415,Apple,Frontend Developer,"Remote, US",Full-time,Mid-Senior level,0.0,65619.0,91437.0,78528.0,Healthcare,201-500 employees
+100416,LinkedIn,Frontend Developer,"Chicago, IL",Internship,Associate,0.0,94704.0,166078.0,130391.0,Automotive,201-500 employees
+100417,LinkedIn,DevOps Engineer,"Chicago, IL",Contract,Entry level,0.0,119500.0,188361.0,153930.5,Entertainment,51-200 employees
+100418,Apple,Machine Intelligence Analyst,"San Francisco, CA",Part-time,Mid-Senior level,1.0,96575.0,168519.0,132547.0,Healthcare,11-50 employees
+100419,Uber,Frontend Developer,"New York, NY",Internship,Mid-Senior level,1.0,99919.0,178960.0,139439.5,Financial Services,Unknown
+100420,Amazon,Data Engineer,"Remote, US",Full-time,Associate,0.0,102261.0,152377.0,127319.0,Automotive,51-200 employees
+100421,Google,Product Manager,"Austin, TX",Part-time,Entry level,0.0,105123.0,140616.0,122869.5,E-Commerce,51-200 employees
+100422,Apple,Software Engineer,"Seattle, WA",Contract,Mid-Senior level,0.0,87716.0,135754.0,111735.0,Technology,10000+ employees
+100423,Uber,Software Engineer,"Austin, TX",Full-time,Executive,0.0,63236.0,103683.0,83459.5,Entertainment,51-200 employees
+100424,LinkedIn,DevOps Engineer,"New York, NY",Full-time,Mid-Senior level,0.0,75848.0,126279.0,101063.5,E-Commerce,11-50 employees
+100425,LinkedIn,Machine Intelligence Analyst,"Chicago, IL",Full-time,Mid-Senior level,0.0,62352.0,100260.0,81306.0,Automotive,10000+ employees
+100426,Netflix,Machine Intelligence Analyst,"Austin, TX",Internship,Entry level,0.0,61932.0,111268.0,86600.0,Automotive,1-10 employees
+100427,Apple,Frontend Developer,"San Francisco, CA",Contract,Executive,0.0,70913.0,131905.0,101409.0,Healthcare,1-10 employees
+100428,Amazon,Data Scientist,"New York, NY",Part-time,Entry level,1.0,68556.0,143906.0,106231.0,Automotive,201-500 employees
+100429,Microsoft,Frontend Developer,"Chicago, IL",Internship,Associate,0.0,81300.0,105325.0,93312.5,Entertainment,Unknown
+100430,Amazon,Product Manager,"Seattle, WA",Internship,Associate,0.0,65498.0,137216.0,101357.0,E-Commerce,201-500 employees
+100431,LinkedIn,Data Engineer,"Chicago, IL",Internship,Entry level,1.0,70582.0,142537.0,106559.5,Entertainment,11-50 employees
+100432,LinkedIn,Software Engineer,"Boston, MA",Full-time,Mid-Senior level,0.0,110098.0,150191.0,130144.5,Financial Services,501-1000 employees
+100433,Meta,Frontend Developer,"San Francisco, CA",Contract,Entry level,0.0,106633.0,132788.0,119710.5,Financial Services,Unknown
+100434,LinkedIn,Data Scientist,"New York, NY",Internship,Mid-Senior level,1.0,69569.0,136176.0,102872.5,Technology,1-10 employees
+100435,Google,Data Scientist,"Seattle, WA",Part-time,Associate,1.0,110591.0,164078.0,137334.5,Technology,201-500 employees
+100436,Airbnb,Frontend Developer,"San Francisco, CA",Contract,Director,0.0,116882.0,184540.0,150711.0,Financial Services,1-10 employees
+100437,Apple,DevOps Engineer,"Chicago, IL",Part-time,Mid-Senior level,0.0,64857.0,140525.0,102691.0,Automotive,11-50 employees
+100438,Amazon,Software Engineer,"San Francisco, CA",Contract,Mid-Senior level,0.0,60340.0,101303.0,80821.5,Entertainment,11-50 employees
+100439,Airbnb,DevOps Engineer,"New York, NY",Part-time,Entry level,0.0,103949.0,174073.0,139011.0,Financial Services,501-1000 employees
+100440,Uber,Data Engineer,"Remote, US",Full-time,Entry level,1.0,76766.0,149636.0,113201.0,Technology,501-1000 employees
+100441,Microsoft,Data Scientist,"San Francisco, CA",Internship,Entry level,0.0,86132.0,162679.0,124405.5,Financial Services,10000+ employees
+100442,Google,Data Scientist,"Boston, MA",Part-time,Entry level,0.0,68491.0,142045.0,105268.0,Automotive,Unknown
+100443,Amazon,Product Manager,"San Francisco, CA",Contract,Mid-Senior level,0.0,60138.0,101074.0,80606.0,Financial Services,11-50 employees
+100444,Airbnb,Data Engineer,"Chicago, IL",Internship,Mid-Senior level,0.0,60358.0,131717.0,96037.5,Entertainment,201-500 employees
+100445,Microsoft,Data Scientist,"Chicago, IL",Internship,Mid-Senior level,0.0,114083.0,138509.0,126296.0,E-Commerce,1-10 employees
+100446,Meta,Data Engineer,"Seattle, WA",Contract,Entry level,0.0,69714.0,113017.0,91365.5,Automotive,51-200 employees
+100447,Google,Software Engineer,"Chicago, IL",Part-time,Mid-Senior level,1.0,79840.0,145120.0,112480.0,Technology,501-1000 employees
+100448,Google,Machine Intelligence Analyst,"Austin, TX",Full-time,Associate,0.0,94395.0,142001.0,118198.0,Entertainment,51-200 employees
+100449,Meta,Data Scientist,"New York, NY",Full-time,Mid-Senior level,0.0,90654.0,158486.0,124570.0,Financial Services,201-500 employees
+100450,Apple,Product Manager,"New York, NY",Part-time,Director,0.0,85879.0,134030.0,109954.5,Financial Services,501-1000 employees
+100451,Meta,Software Engineer,"Remote, US",Internship,Director,0.0,75996.0,109763.0,92879.5,E-Commerce,51-200 employees
+100452,Google,Frontend Developer,"Remote, US",Internship,Entry level,0.0,115778.0,147086.0,131432.0,Technology,Unknown
+100453,Google,Data Engineer,"New York, NY",Internship,Associate,0.0,97772.0,162017.0,129894.5,Technology,201-500 employees
+100454,Airbnb,Frontend Developer,"Boston, MA",Internship,Mid-Senior level,0.0,118478.0,196465.0,157471.5,Healthcare,1-10 employees
+100455,LinkedIn,DevOps Engineer,"Remote, US",Part-time,Mid-Senior level,0.0,86762.0,152433.0,119597.5,Technology,Unknown
+100456,Microsoft,Software Engineer,"Seattle, WA",Internship,Mid-Senior level,0.0,73283.0,118053.0,95668.0,E-Commerce,201-500 employees
+100457,Meta,Frontend Developer,"Chicago, IL",Contract,Mid-Senior level,0.0,99420.0,147992.0,123706.0,Healthcare,10000+ employees
+100458,Microsoft,Data Scientist,"New York, NY",Internship,Mid-Senior level,0.0,115568.0,177016.0,146292.0,Healthcare,501-1000 employees
+100459,Meta,Data Engineer,"Remote, US",Full-time,Mid-Senior level,0.0,79554.0,101758.0,90656.0,Financial Services,11-50 employees
+100460,Uber,Machine Intelligence Analyst,"New York, NY",Internship,Mid-Senior level,0.0,80219.0,127452.0,103835.5,Financial Services,1-10 employees
+100461,Google,Software Engineer,"Austin, TX",Part-time,Mid-Senior level,0.0,117169.0,158898.0,138033.5,Technology,Unknown
+100462,LinkedIn,Data Scientist,"San Francisco, CA",Full-time,Mid-Senior level,0.0,94919.0,146050.0,120484.5,Healthcare,Unknown
+100463,Airbnb,Product Manager,"Chicago, IL",Part-time,Associate,0.0,69429.0,141857.0,105643.0,Financial Services,51-200 employees
+100464,LinkedIn,DevOps Engineer,"New York, NY",Part-time,Entry level,0.0,106840.0,160710.0,133775.0,E-Commerce,501-1000 employees
+100465,LinkedIn,Data Engineer,"San Francisco, CA",Full-time,Entry level,1.0,104695.0,162706.0,133700.5,Financial Services,11-50 employees
+100466,LinkedIn,Software Engineer,"Remote, US",Part-time,Associate,0.0,99673.0,159055.0,129364.0,Automotive,201-500 employees
+100467,Microsoft,Software Engineer,"San Francisco, CA",Part-time,Mid-Senior level,0.0,79218.0,148285.0,113751.5,Automotive,11-50 employees
+100468,Meta,Machine Intelligence Analyst,"Chicago, IL",Internship,Entry level,0.0,72452.0,151037.0,111744.5,Financial Services,501-1000 employees
+100469,Stripe,Machine Intelligence Analyst,"New York, NY",Contract,Entry level,0.0,118342.0,179817.0,149079.5,Healthcare,501-1000 employees
+100470,Uber,Product Manager,"Austin, TX",Part-time,Entry level,0.0,108980.0,175661.0,142320.5,Healthcare,10000+ employees
+100471,Amazon,DevOps Engineer,"Boston, MA",Part-time,Executive,0.0,78951.0,120558.0,99754.5,Entertainment,10000+ employees
+100472,LinkedIn,Product Manager,"Remote, US",Part-time,Mid-Senior level,0.0,61307.0,106275.0,83791.0,Automotive,11-50 employees
+100473,Apple,Data Scientist,"New York, NY",Internship,Director,0.0,74852.0,128250.0,101551.0,E-Commerce,201-500 employees
+100474,Microsoft,Data Scientist,"Chicago, IL",Contract,Mid-Senior level,0.0,85232.0,117140.0,101186.0,Healthcare,11-50 employees
+100475,Airbnb,Product Manager,"Remote, US",Full-time,Mid-Senior level,0.0,95428.0,141851.0,118639.5,Technology,501-1000 employees
+100476,Amazon,DevOps Engineer,"Seattle, WA",Internship,Mid-Senior level,1.0,103171.0,166786.0,134978.5,Automotive,501-1000 employees
+100477,Stripe,Product Manager,"San Francisco, CA",Internship,Mid-Senior level,0.0,86485.0,115656.0,101070.5,E-Commerce,51-200 employees
+100478,Apple,DevOps Engineer,"Boston, MA",Contract,Entry level,0.0,112882.0,145603.0,129242.5,E-Commerce,10000+ employees
+100479,Stripe,DevOps Engineer,"Chicago, IL",Contract,Director,0.0,70238.0,146073.0,108155.5,Healthcare,51-200 employees
+100480,Amazon,Frontend Developer,"Seattle, WA",Internship,Associate,1.0,98975.0,168404.0,133689.5,E-Commerce,1-10 employees
+100481,LinkedIn,Data Engineer,"New York, NY",Full-time,Mid-Senior level,0.0,112314.0,148930.0,130622.0,Healthcare,501-1000 employees
+100482,Apple,DevOps Engineer,"Austin, TX",Internship,Executive,1.0,61140.0,123652.0,92396.0,Financial Services,51-200 employees
+100483,Stripe,Machine Intelligence Analyst,"Remote, US",Contract,Associate,0.0,84842.0,143300.0,114071.0,Automotive,11-50 employees
+100484,Airbnb,DevOps Engineer,"San Francisco, CA",Full-time,Mid-Senior level,0.0,86421.0,152590.0,119505.5,Entertainment,10000+ employees
+100485,Meta,DevOps Engineer,"Remote, US",Contract,Entry level,0.0,61708.0,89367.0,75537.5,Financial Services,10000+ employees
+100486,Google,DevOps Engineer,"Boston, MA",Full-time,Mid-Senior level,0.0,63630.0,126999.0,95314.5,Automotive,201-500 employees
+100487,Meta,Frontend Developer,"New York, NY",Part-time,Mid-Senior level,0.0,79595.0,111299.0,95447.0,Healthcare,11-50 employees
+100488,Amazon,Frontend Developer,"Remote, US",Contract,Entry level,0.0,70485.0,123278.0,96881.5,Automotive,201-500 employees
+100489,Microsoft,Data Scientist,"San Francisco, CA",Contract,Entry level,0.0,88308.0,156460.0,122384.0,Healthcare,51-200 employees
+100490,Google,Frontend Developer,"New York, NY",Internship,Associate,0.0,104789.0,171262.0,138025.5,Financial Services,Unknown
+100491,Uber,Machine Intelligence Analyst,"Remote, US",Contract,Entry level,0.0,115690.0,166916.0,141303.0,Technology,1-10 employees
+100492,Airbnb,Machine Intelligence Analyst,"Austin, TX",Contract,Mid-Senior level,0.0,86086.0,129938.0,108012.0,Technology,11-50 employees
+100493,Uber,Frontend Developer,"Chicago, IL",Part-time,Director,0.0,76859.0,128941.0,102900.0,Automotive,11-50 employees
+100494,Apple,Product Manager,"New York, NY",Contract,Director,0.0,67684.0,110478.0,89081.0,Technology,11-50 employees
+100495,Google,Data Engineer,"Chicago, IL",Part-time,Mid-Senior level,0.0,85552.0,146972.0,116262.0,Healthcare,201-500 employees
+100496,Uber,Frontend Developer,"New York, NY",Part-time,Director,1.0,61207.0,134123.0,97665.0,E-Commerce,51-200 employees
+100497,Uber,DevOps Engineer,"Austin, TX",Part-time,Entry level,0.0,106099.0,181850.0,143974.5,Healthcare,11-50 employees
+100498,Stripe,Software Engineer,"Chicago, IL",Part-time,Entry level,0.0,61960.0,95339.0,78649.5,E-Commerce,Unknown
+100499,Meta,Data Engineer,"Seattle, WA",Full-time,Mid-Senior level,1.0,60557.0,134811.0,97684.0,Financial Services,11-50 employees

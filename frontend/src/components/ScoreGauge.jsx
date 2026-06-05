@@ -46,10 +46,10 @@ export default function ScoreGauge({ score, customColor }) {
           fill={scoreColor} style={{ fontFamily: "var(--font-heading)" }}>
           {animScore}%
         </text>
-        <text x="110" y="115" textAnchor="middle" fontSize="12" fill="#94A3B8"
+        {/* <text x="110" y="115" textAnchor="middle" fontSize="12" fill="#94A3B8"
           style={{ fontFamily: "var(--font-sans)", fontWeight: "600" }}>
           Match Rate
-        </text>
+        </text> */}
       </svg>
     </div>
   );
