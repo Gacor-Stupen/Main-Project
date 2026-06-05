@@ -99,9 +99,9 @@ Run Frontend
 npm run dev
 ```
 
-Install Backend dependencies
+In new terminal. Install Backend dependencies
 ```bash
-cd ../backend
+cd backend
 npm install
 ```  
 
@@ -115,9 +115,9 @@ Run backend server
 npm run dev
 ``` 
 
-Move to ai-service folder
+In new terminal move to ai-service folder
 ```bash
-cd ../ai-service
+cd ai-service
 ``` 
 
 Creating Virtual Environment
