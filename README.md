@@ -45,6 +45,9 @@ By analyzing user savings, attrition prediction models, and real-time market dem
 *   **Machine Learning:** Scikit-Learn, Joblib, Numpy
 *   **Edge Runtime:** ai-edge-litert (TensorFlow Lite Runtime)
 
+## Model ML
+https://colab.research.google.com/drive/1yZDmXUy2_xFo81HbS7TNjv_DnGj4feXt?usp=sharing
+
 
 ## Installation
 
