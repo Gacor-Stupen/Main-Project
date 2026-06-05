@@ -61,7 +61,7 @@ Follow these steps to set up the **ResignAjaDulu** project on your local machine
 ### Cloning & Initial Setup
 Clone this repository
 ```bash
-git clone https://github.com/oMrPuPa/capstoneProject.git
+git clone https://github.com/Gacor-Stupen/Main-Project.git
 ```
 
 ### Environment Variables
