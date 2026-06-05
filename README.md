@@ -56,6 +56,7 @@ Follow these steps to set up the **ResignAjaDulu** project on your local machine
 ### Prerequisites
 * **Git:** To clone the repository.
 * **Python:** Ensure you are using Python between version `3.10` and `3.13`.
+* **Node.js:** Requires version `v23` or higher.
 
 ### Cloning & Initial Setup
 Clone this repository
