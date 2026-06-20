@@ -78,12 +78,12 @@ export default function HomePage() {
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary/20 via-text-main to-text-main opacity-80"></div>
 
           <div className="relative z-10 w-full max-w-6xl text-center">
-            {/* <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">
-              Tim Capstone CC26-PSU097
-            </span> */}
-            <h2 className="text-4xl md:text-5xl font-black mb-6 font-heading text-white tracking-tight">
+            <span className="text-primary text-4xl md:text-5xl font-bold tracking-widest uppercase text-sm mb-2 block">
+              Capstone CC26-PSU097
+            </span>
+            {/* <h2 className="text-4xl md:text-5xl font-black mb-6 font-heading text-white tracking-tight">
                Capstone CC26-PSU097
-            </h2>
+            </h2> */}
             {/* <p className="text-white/70 text-base md:text-lg mb-16 max-w-2xl mx-auto font-medium leading-relaxed">
               Proyek ini dikembangkan secara kolaboratif oleh 6 talenta dari learning path Data Science, AI Engineering,
               dan Full-Stack Web Development.
