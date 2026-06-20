@@ -1,47 +1,63 @@
 {
-  "hash": "4145c0fb",
-  "configHash": "5826bb80",
-  "lockfileHash": "834a3cc3",
-  "browserHash": "09a933a9",
+  "hash": "c0e56e24",
+  "configHash": "26f96dc5",
+  "lockfileHash": "afd24954",
+  "browserHash": "e0a19fe0",
   "optimized": {
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "f3146861",
+      "needsInterop": false
+    },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "c2c9aeb8",
+      "fileHash": "a92d7fda",
       "needsInterop": true
     },
     "react-icons/fi": {
       "src": "../../node_modules/react-icons/fi/index.mjs",
       "file": "react-icons_fi.js",
-      "fileHash": "044ca585",
+      "fileHash": "012cdc36",
+      "needsInterop": false
+    },
+    "react-markdown": {
+      "src": "../../node_modules/react-markdown/index.js",
+      "file": "react-markdown.js",
+      "fileHash": "5c865500",
       "needsInterop": false
     },
     "react-router-dom": {
       "src": "../../node_modules/react-router-dom/dist/index.mjs",
       "file": "react-router-dom.js",
-      "fileHash": "0de13bc4",
+      "fileHash": "e8120f5a",
       "needsInterop": false
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "26760dd8",
+      "fileHash": "a6055a26",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "8d5e004e",
+      "fileHash": "de8bfc09",
       "needsInterop": true
     }
   },
   "chunks": {
-    "react-BejDdLFV": {
-      "file": "react-BejDdLFV.js",
+    "jsx-runtime-CQJc9vR_": {
+      "file": "jsx-runtime-CQJc9vR_.js",
       "isDynamicEntry": false
     },
-    "react-dom-Ds__Jv24": {
-      "file": "react-dom-Ds__Jv24.js",
+    "react-B35R_oEX": {
+      "file": "react-B35R_oEX.js",
+      "isDynamicEntry": false
+    },
+    "react-dom-CYDThRfy": {
+      "file": "react-dom-CYDThRfy.js",
       "isDynamicEntry": false
     }
   }

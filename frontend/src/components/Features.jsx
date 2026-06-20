@@ -1,4 +1,5 @@
 import { FiCpu, FiDollarSign, FiClock, FiShield } from "react-icons/fi";
+import { FeatureCircularCarousel } from "./ui/feature-circular-carousel";
 
 const FEATURES = [
   {
@@ -38,9 +39,10 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Versi mobile: grid statis biasa, lebih nyaman di-scroll di layar kecil */}
+        <div className="grid grid-cols-1 sm:hidden gap-6">
           {FEATURES.map((f, i) => (
-            <div key={i} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[32px] p-8 flex flex-col gap-4 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-2 shadow-2xl">
+            <div key={i} className="bg-[#1A2438] border border-white/10 rounded-[32px] p-8 flex flex-col gap-4 hover:bg-[#212d47] hover:border-white/20 transition-all duration-300 hover:-translate-y-2 shadow-2xl">
               <div className="w-12 h-12 rounded-2xl bg-primary/20 text-primary flex items-center justify-center">
                 {f.icon}
               </div>
@@ -48,6 +50,11 @@ export default function Features() {
               <p className="text-sm text-white/60 font-medium leading-relaxed">{f.desc}</p>
             </div>
           ))}
+        </div>
+
+        {/* Versi desktop/tablet: circular carousel 3D */}
+        <div className="hidden sm:block">
+          <FeatureCircularCarousel items={FEATURES} autoplay={true} />
         </div>
       </div>
     </section>

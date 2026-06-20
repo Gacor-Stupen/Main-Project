@@ -1,4 +1,5 @@
 import { FiClipboard, FiCpu, FiCheckCircle } from "react-icons/fi";
+import HowItWorkStepper from "./ui/HowItWorkStepper";
 
 const STEPS = [
   {
@@ -33,20 +34,7 @@ export default function HowItWorks() {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-6 items-stretch">
-        {STEPS.map((step, i) => (
-          <div key={i} className="flex-1 bg-white border border-secondary/20 rounded-[32px] p-8 flex flex-col gap-4 shadow-sm hover:-translate-y-1 transition-all duration-300">
-            <div className="flex items-center justify-between">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-                {step.icon}
-              </div>
-              <span className="font-black text-4xl text-secondary/20 font-heading">{step.num}</span>
-            </div>
-            <h3 className="font-black text-xl text-text-main font-heading">{step.title}</h3>
-            <p className="text-sm text-text-main/60 font-medium leading-relaxed">{step.desc}</p>
-          </div>
-        ))}
-      </div>
+      <HowItWorkStepper steps={STEPS} />
     </section>
   );
 }

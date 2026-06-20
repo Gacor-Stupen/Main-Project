@@ -6,6 +6,8 @@ import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import HowItWork from "../components/HowItWork";
 import Features from "../components/Features";
+import TeamGrid from "../components/ui/TeamGrid";
+import PredictionCard from "../components/ui/PredictionCard";
 const BASE_URL = import.meta.env.VITE_BACKEND_SERVICE_URL;
 
 export default function HomePage() {
@@ -16,12 +18,12 @@ export default function HomePage() {
 
   // Data Tim
   const teamMembers = [
-    { id: "CDCC009D6Y2672", name: "Arya Ivan Ghally", role: "Data Scientist" },
-    { id: "CDCC009D6Y2147", name: "Ananda Nashril Fikri B.", role: "Data Scientist" },
-    { id: "CACC009D6X0546", name: "Devi Oktaviani", role: "AI Engineer" },
-    { id: "CACC009D6Y0560", name: "Feri Adiansah", role: "AI Engineer" },
-    { id: "CFCC009D6Y1107", name: "Egi Prayogi", role: "Full-Stack Developer" },
-    { id: "CFCC009D6Y1879", name: "Muhammad Rafi Putra Pati", role: "Full-Stack Developer" },
+    { id: "CDCC009D6Y2672", name: "Arya Ivan Ghally", role: "Data Scientist", image: "/public/Team/ghally.png" },
+    { id: "CDCC009D6Y2147", name: "Ananda Nashril Fikri B.", role: "Data Scientist", image: "/public/Team/nashril.png" },
+    { id: "CACC009D6X0546", name: "Devi Oktaviani", role: "AI Engineer", image: "/public/Team/devi.png" },
+    { id: "CACC009D6Y0560", name: "Feri Adiansah", role: "AI Engineer", image: "/public/Team/feri.png" },
+    { id: "CFCC009D6Y1107", name: "Egi Prayogi", role: "Full-Stack Developer", image: "/public/Team/egi.png" },
+    { id: "CFCC009D6Y1879", name: "Muhammad Rafi Putra Pati", role: "Full-Stack Developer", image: "/public/Team/rafi.jpg" },
   ];
 
   return (
@@ -63,51 +65,7 @@ export default function HomePage() {
           </div>
 
           <div className="w-full lg:w-1/2 relative z-10 flex justify-center mt-10 lg:mt-0 animate-in fade-in zoom-in-95 duration-700 delay-200">
-            <div className="bg-white/80 backdrop-blur-md p-8 rounded-[40px] shadow-2xl shadow-secondary/10 border border-secondary/20 w-full max-w-md transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
-              <div className="flex justify-between items-center mb-6 border-b border-secondary/10 pb-4">
-                <h3 className="font-black text-xs uppercase tracking-widest text-text-main flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary"></span>
-                  Prediction
-                </h3>
-              </div>
-
-              <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between text-xs mb-2 font-black uppercase tracking-wider">
-                    <span className="text-text-main/60">Stress Level</span>
-                    <span className="text-primary">35%</span>
-                  </div>
-                  <div className="w-full bg-secondary/10 rounded-full h-3 overflow-hidden border border-secondary/20">
-                    <div
-                      className="bg-primary h-full rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: "35%" }}
-                    ></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between text-xs mb-2 font-black uppercase tracking-wider">
-                    <span className="text-text-main/60">Keahlian Kerja</span>
-                    <span className="text-secondary">60%</span>
-                  </div>
-                  <div className="w-full bg-secondary/10 rounded-full h-3 overflow-hidden border border-secondary/20">
-                    <div
-                      className="bg-secondary h-full rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: "60%" }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 bg-background/60 p-5 rounded-3xl border border-secondary/10">
-                <p className="font-black text-[10px] text-primary uppercase tracking-widest mb-2 flex items-center gap-2">
-                  Rekomendasi:
-                </p>
-                <p className="text-[13px] font-semibold text-text-main/70 leading-relaxed italic">
-                  "Pertimbangkan untuk mengambil cuti sebelum memutuskan resign. Kondisi saat ini sangat dipengaruhi
-                  oleh kelelahan kronis."
-                </p>
-              </div>
-            </div>
+            <PredictionCard />
           </div>
         </section>
 
@@ -120,37 +78,18 @@ export default function HomePage() {
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary/20 via-text-main to-text-main opacity-80"></div>
 
           <div className="relative z-10 w-full max-w-6xl text-center">
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">
+            {/* <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">
               Tim Capstone CC26-PSU097
-            </span>
+            </span> */}
             <h2 className="text-4xl md:text-5xl font-black mb-6 font-heading text-white tracking-tight">
-              Di Balik Layar ResignAjaDulu
+               Capstone CC26-PSU097
             </h2>
-            <p className="text-white/70 text-base md:text-lg mb-16 max-w-2xl mx-auto font-medium leading-relaxed">
+            {/* <p className="text-white/70 text-base md:text-lg mb-16 max-w-2xl mx-auto font-medium leading-relaxed">
               Proyek ini dikembangkan secara kolaboratif oleh 6 talenta dari learning path Data Science, AI Engineering,
               dan Full-Stack Web Development.
-            </p>
+            </p> */}
 
-            <div className="flex flex-wrap justify-center gap-6 w-full items-stretch">
-              {teamMembers.map((member, index) => (
-                <div
-                  key={index}
-                  className="flex-1 min-w-[100%] sm:min-w-[calc(50%-1.5rem)] lg:min-w-[calc(33.333%-1.5rem)] bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[32px] hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-left group flex flex-col shadow-2xl hover:-translate-y-2"
-                >
-                  <div className="flex-1">
-                    <h3 className="font-black text-xl leading-tight text-white font-heading">{member.name}</h3>
-                    <p className="text-primary font-bold text-[11px] uppercase tracking-widest mt-2">{member.role}</p>
-                  </div>
-
-                  <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-white/50 font-bold text-[10px] uppercase tracking-widest">ID Cohort</span>
-                    <span className="text-white/60 font-mono text-xs bg-white/10 px-2 py-1 rounded-md">
-                      {member.id}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <TeamGrid members={teamMembers} />
           </div>
         </section>
         <FAQ />
