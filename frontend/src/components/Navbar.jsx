@@ -1,9 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FiUser, FiLogOut, FiSettings, FiChevronDown } from "react-icons/fi";
+import { MobileNav } from "./ui/MobileNav";
+import useNavScroll from "../hooks/useNavScroll";
 
-export default function Navbar() {
+const navigationLinks = [
+  {
+    name: "Menu",
+    items: [
+      { href: "#beranda", label: "Beranda" },
+      { href: "#fitur", label: "Fitur" },
+      { href: "#cara-kerja", label: "Cara Kerja" },
+      { href: "#tim", label: "Tim" },
+      { href: "#faq", label: "FAQ" },
+    ],
+  },
+];
+
+export default function Navbar({ hideNavLinks = false }) {
   const navigate = useNavigate();
+  const handleNavClick = useNavScroll();
   const [showDropdown, setShowDropdown] = useState(false);
   const [user, setUser] = useState(null);
   const dropdownRef = useRef(null);
@@ -41,9 +57,9 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-white/80 backdrop-blur-md border-b border-secondary/15 sticky top-0 z-50 transition-all">
-      <div className="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between gap-4">
 
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
           <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl leading-none transition-transform group-hover:scale-105 shadow-sm shadow-primary/20">
             R
           </div>
@@ -52,7 +68,29 @@ export default function Navbar() {
           </p>
         </Link>
 
-        {user ? (
+        {/* Menu navigasi desktop, tersembunyi di mobile dan saat hideNavLinks aktif */}
+        {!hideNavLinks && (
+          <div className="hidden md:flex items-center gap-1">
+            {navigationLinks[0].items.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="px-4 py-2 rounded-full text-sm font-bold text-text-main/70 hover:text-primary hover:bg-primary/5 transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        )}
+
+        <div className="flex items-center gap-2 shrink-0">
+          {/* Hamburger menu, hanya tampil di mobile dan saat hideNavLinks tidak aktif */}
+          {!hideNavLinks && (
+            <MobileNav nav={navigationLinks} onItemClick={handleNavClick} />
+          )}
+
+          {user ? (
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setShowDropdown((prev) => !prev)}
@@ -109,6 +147,7 @@ export default function Navbar() {
             Masuk
           </button>
         )}
+        </div>
 
       </div>
     </nav>

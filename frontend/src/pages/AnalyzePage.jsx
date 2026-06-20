@@ -159,7 +159,7 @@ export default function AnalyzePage() {
       <div className="absolute top-10 left-10 w-72 h-72 bg-primary/15 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-secondary/15 rounded-full blur-3xl -z-10"></div>
 
-      <Navbar />
+      <Navbar hideNavLinks />
 
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-16 py-12 flex flex-col lg:flex-row gap-12 lg:gap-20 relative z-10 flex-1">
         {/* SBLAHH KIRI INDIKATOR STEP */}

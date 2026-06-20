@@ -79,7 +79,7 @@ export default function SkillPage() {
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10" />
 
       {/*INI NAVBAR BAHN*/}
-      <Navbar />
+      <Navbar hideNavLinks />
 
       <div className="max-w-7xl mx-auto w-full px-6 lg:px-16 py-12 flex flex-col lg:flex-row gap-12 lg:gap-20 relative z-10 flex-1">
         {/* Sisi Kiri Informasi */}

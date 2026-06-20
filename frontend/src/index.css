@@ -17,6 +17,20 @@
   /* Khusus untuk Status, Alert, dan Hasil*/
   --color-danger: #EF4444;     /* Merah  */
   --color-success: #10B981;    /* Emerald */
+
+  /* Animasi expand/collapse untuk Radix Accordion (FAQ) */
+  --animate-accordion-down: accordion-down 0.25s ease-out;
+  --animate-accordion-up: accordion-up 0.25s ease-out;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
 }
 
 @layer base {

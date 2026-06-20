@@ -36,7 +36,7 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* HERO SECTION */}
-        <section className="relative flex flex-col lg:flex-row justify-center items-center min-h-[calc(100vh-80px)] px-6 lg:px-16 max-w-7xl mx-auto gap-12 py-12 lg:py-0">
+        <section id="beranda" className="relative flex flex-col lg:flex-row justify-center items-center min-h-[calc(100vh-80px)] px-6 lg:px-16 max-w-7xl mx-auto gap-12 py-12 lg:py-0">
           <div className="w-full lg:w-1/2 z-10 flex flex-col items-start text-left animate-in fade-in slide-in-from-bottom-8 duration-700">
             <h1 className="text-text-main text-5xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.1] font-heading">
               Yakin Mau <span className="text-primary">Resign?</span>
@@ -74,7 +74,7 @@ export default function HomePage() {
         <HowItWork />
 
         {/* TEAM SECTION*/}
-        <section className="px-6 lg:px-16 py-24 flex flex-col items-center justify-center bg-text-main text-background relative overflow-hidden mt-10">
+        <section id="tim" className="px-6 lg:px-16 py-24 flex flex-col items-center justify-center bg-text-main text-background relative overflow-hidden mt-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary/20 via-text-main to-text-main opacity-80"></div>
 
           <div className="relative z-10 w-full max-w-6xl text-center">

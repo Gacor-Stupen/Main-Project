@@ -26,7 +26,7 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section className="bg-text-main relative overflow-hidden">
+    <section id="fitur" className="bg-text-main relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-text-main to-text-main opacity-80" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 py-24">

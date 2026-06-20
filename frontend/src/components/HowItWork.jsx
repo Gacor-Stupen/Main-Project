@@ -24,7 +24,7 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="px-6 lg:px-16 py-24 max-w-7xl mx-auto">
+    <section id="cara-kerja" className="px-6 lg:px-16 py-24 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-black text-text-main tracking-tight mb-3 font-heading">
           Cara <span className="text-primary">Kerjanya</span>
